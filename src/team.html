@@ -47,35 +47,42 @@
   <script>
     const AGENTS = [
       {
-        name: "David Kucic", role: "Broker / Military Relocation Expert", years: "12 yrs Army · 8 yrs RE", image: "assets/images/agent-1.jpg", email: "david@yourcompany.com",
+        name: "David Kucic",
+        role: "Broker / Military Relocation Expert",
+        years: "12 yrs Army · 8 yrs RE", image: "assets/images/agent-1.jpg",
+        email: "david@yourcompany.com",
         bio: "After 12 years in the U.S. Army with two tours at Schofield Barracks, David built his real estate practice around what he knows best: helping military families land softly in Hawaii.",
         specialties: ["VA Loans", "PCS Relocation", "Oahu Market", "Investment Properties"]
       },
       {
-        name: "Tonya Kucic", role: "Co-Broker / Luxury & Neighborhood Specialist", years: "15+ yrs RE", image: "assets/images/agent-2.jpg", email: "tonya@yourcompany.com",
+        name: "Tonya Kucic",
+        role: "Co-Broker / Luxury & Neighborhood Specialist",
+        years: "15+ yrs RE",
+        image: "assets/images/agent-2.jpg",
+        email: "tonya@yourcompany.com",
         bio: "Honolulu-born and raised, Tonya brings 15+ years of local insight and a sharp eye for negotiation, staging, and marketing high-end island homes.",
         specialties: ["Luxury Homes", "Staging & Marketing", "Negotiation", "Local Neighborhoods"]
       },
-      {
-        name: "Mike Sullivan", role: "Realtor / VA Loan Certified", years: "Former Marine · 6 yrs RE", image: "assets/images/agent-3.jpg", email: "mike@yourcompany.com",
-        bio: "A former Marine, Mike speaks the language of service. He guides veterans and active-duty buyers through every step of the VA loan process.",
-        specialties: ["VA Certified", "First-Time Buyers", "Veterans", "West Oahu"]
-      },
-      {
-        name: "Sarah Jenkins", role: "Realtor / Property Management Director", years: "10 yrs RE", image: "assets/images/agent-4.jpg", email: "sarah@yourcompany.com",
-        bio: "Sarah runs our property management division, making sure deployed and out-of-state owners have full peace of mind year-round.",
-        specialties: ["Property Management", "Tenant Placement", "Rental Strategy", "Maintenance"]
-      },
-      {
-        name: "James \"Kimo\" Lee", role: "Realtor / Oahu & Big Island Expert", years: "12 yrs RE", image: "assets/images/agent-5.jpg", email: "kimo@yourcompany.com",
-        bio: "Born on the Big Island and raised on Oahu, Kimo knows every neighborhood worth knowing · and the local-only spots, too.",
-        specialties: ["Big Island", "Country Properties", "Land", "Local Knowledge"]
-      },
-      {
-        name: "Rachel Okamoto", role: "Buyer's Agent / Military Spouse Specialist", years: "5 yrs RE", image: "assets/images/agent-6.jpg", email: "rachel@yourcompany.com",
-        bio: "A proud military spouse herself, Rachel works exclusively with buyers · with patience, care, and a real understanding of military life.",
-        specialties: ["Military Spouses", "Buyer's Agent", "School Districts", "Family Homes"]
-      }
+      // {
+      //   name: "Mike Sullivan", role: "Realtor / VA Loan Certified", years: "Former Marine · 6 yrs RE", image: "assets/images/agent-3.jpg", email: "mike@yourcompany.com",
+      //   bio: "A former Marine, Mike speaks the language of service. He guides veterans and active-duty buyers through every step of the VA loan process.",
+      //   specialties: ["VA Certified", "First-Time Buyers", "Veterans", "West Oahu"]
+      // },
+      // {
+      //   name: "Sarah Jenkins", role: "Realtor / Property Management Director", years: "10 yrs RE", image: "assets/images/agent-4.jpg", email: "sarah@yourcompany.com",
+      //   bio: "Sarah runs our property management division, making sure deployed and out-of-state owners have full peace of mind year-round.",
+      //   specialties: ["Property Management", "Tenant Placement", "Rental Strategy", "Maintenance"]
+      // },
+      // {
+      //   name: "James \"Kimo\" Lee", role: "Realtor / Oahu & Big Island Expert", years: "12 yrs RE", image: "assets/images/agent-5.jpg", email: "kimo@yourcompany.com",
+      //   bio: "Born on the Big Island and raised on Oahu, Kimo knows every neighborhood worth knowing · and the local-only spots, too.",
+      //   specialties: ["Big Island", "Country Properties", "Land", "Local Knowledge"]
+      // },
+      // {
+      //   name: "Rachel Okamoto", role: "Buyer's Agent / Military Spouse Specialist", years: "5 yrs RE", image: "assets/images/agent-6.jpg", email: "rachel@yourcompany.com",
+      //   bio: "A proud military spouse herself, Rachel works exclusively with buyers · with patience, care, and a real understanding of military life.",
+      //   specialties: ["Military Spouses", "Buyer's Agent", "School Districts", "Family Homes"]
+      // }
     ];
     document.addEventListener("DOMContentLoaded", () => {
       const host = document.getElementById("team-grid");
