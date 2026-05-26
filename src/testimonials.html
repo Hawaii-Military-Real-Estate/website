@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Testimonials – Military Families | Hawaii Real Estate</title>
+  <meta name="description"
+    content="Real reviews from military families who bought or sold Hawaii homes with us. Stress-free PCS moves and Aloha service.">
+  <link rel="canonical" href="/testimonials.html">
+  <meta property="og:title" content="Testimonials · Hawaii Military Real Estate">
+  <meta property="og:description" content="What military families say about our service.">
+  <meta property="og:url" content="/testimonials.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <main>
+
+    <section class="page-hero">
+      <div class="bg"><img src="assets/images/hero-bg-testimonials.jpg" alt="" aria-hidden="true"></div>
+      <div class="page-hero-inner reveal">
+        <span class="eyebrow-glass"><span
+            style="width:6px;height:6px;border-radius:999px;background:currentColor;opacity:.7"></span>
+          Testimonials</span>
+        <h1>Real stories from real military families</h1>
+        <p class="intro">We're proud to have helped military families buy and sell homes across Hawaii. Here's what they
+          have to say.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="marquee-wrap">
+        <div class="marquee-row r1" id="row1"></div>
+        <div class="marquee-row r2" id="row2"></div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container grid">
+        <div class="reveal">
+          <div class="n">20+</div>
+          <div class="l">Years of Experience</div>
+        </div>
+        <div class="reveal">
+          <div class="n">500+</div>
+          <div class="l">Families Helped</div>
+        </div>
+        <div class="reveal">
+          <div class="n">4.9★</div>
+          <div class="l">Average Rating</div>
+        </div>
+        <div class="reveal">
+          <div class="n">100%</div>
+          <div class="l">Military Focused</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="site-cta" data-title="Ready to Work Together?" data-subtitle="Let's talk about your real estate goals."
+      data-note="Call (808) 123-4567 today."></div>
+  </main>
+  <div id="site-footer"></div>
+
+  <script>
+    const REVIEWS = [
+      { quote: "David got us a home sight-unseen before our PCS. The photos and video tour were so thorough we knew exactly what we were buying.", name: "The Smith Family", role: "PCS · Schofield Barracks", img: "assets/images/client-1.jpg" },
+      { quote: "Sold our home in less than 2 weeks while we were already on the mainland. Couldn't have asked for better service.", name: "Major T. Williams", role: "U.S. Army", img: "assets/images/client-2.jpg" },
+      { quote: "They helped us navigate VA financing and local market conditions. We felt like family, not just a transaction.", name: "The Rodriguez Family", role: "Marine Corps", img: "assets/images/client-3.jpg" },
+      { quote: "Living on Oahu is expensive but David found us a gem within BAH. Forever grateful!", name: "Captain L. & family", role: "U.S. Navy", img: "assets/images/client-4.jpg" },
+      { quote: "The most honest and responsive real estate team we've ever worked with.", name: "The Parkers", role: "Retired Veteran", img: "assets/images/client-5.jpg" },
+      { quote: "From showing to closing, everything was smooth. Highly recommend for any military family.", name: "The Harris Family", role: "Air Force", img: "assets/images/client-6.jpg" }
+    ];
+    const star = '<svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
+    const quote = '<svg class="q" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1zm12 0c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>';
+    const card = r => `<div class="review-card">
+    <div class="top">
+      <img src="${r.img}" alt="${r.name}" loading="lazy" width="56" height="56">
+      <div><div class="n">${r.name}</div><div class="r">${r.role}</div></div>
+      ${quote}
+    </div>
+    <div class="stars">${star.repeat(5)}</div>
+    <blockquote>"${r.quote}"</blockquote>
+  </div>`;
+    document.addEventListener("DOMContentLoaded", () => {
+      const list1 = [...REVIEWS, ...REVIEWS];
+      const list2 = [...REVIEWS].reverse(); const list2x = [...list2, ...list2];
+      document.getElementById("row1").innerHTML = list1.map(card).join("");
+      document.getElementById("row2").innerHTML = list2x.map(card).join("");
+    });
+  </script>
+  <script src="assets/js/site.js" defer></script>
+</body>
+
+</html>
