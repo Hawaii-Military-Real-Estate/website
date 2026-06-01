@@ -1,0 +1,15 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "html.format.enable": true,
+  "html.format.indentInnerHtml": false,
+  "html.format.wrapLineLength": 120,
+  "html.format.wrapAttributes": "auto",
+  "html.format.preserveNewLines": true,
+  "html.format.maxPreserveNewLines": null,
+  "html.format.extraLiners": "head, body, /html",
+  "files.eol": "\n",
+  "files.insertFinalNewline": false,
+  "files.trimFinalNewlines": false
+}
