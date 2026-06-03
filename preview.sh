@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd "$(dirname "$0")"
+cd "$(git rev-parse --show-toplevel)"
 
-if [[ ! -d src ]]; then
-  echo "Error: src/ directory not found." >&2
-  exit 1
-fi
+./build.sh
 
-echo "Serving src/ at http://localhost:8080"
-exec python3 -m http.server 8080 --bind 127.0.0.1 --directory src
+port="$(
+  python3 - <<'PY'
+import socket
+
+for port in range(8080, 8181):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        try:
+            sock.bind(("127.0.0.1", port))
+        except OSError:
+            continue
+        print(port)
+        break
+else:
+    raise SystemExit("No available preview port found between 8080 and 8180.")
+PY
+)"
+
+echo "Serving build/ at http://localhost:${port}"
+exec python3 -m http.server "$port" --bind 127.0.0.1 --directory build

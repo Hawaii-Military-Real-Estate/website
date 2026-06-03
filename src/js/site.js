@@ -162,45 +162,6 @@ function renderCTA(opts = {}) {
   </div></section>`;
 }
 
-function sortTeamCards() {
-  document.querySelectorAll("[data-team-grid]").forEach((grid) => {
-    const cards = Array.from(grid.querySelectorAll("[data-agent-card]"));
-    if (!cards.length) return;
-
-    const getSort = (card) => {
-      const value = card.dataset.sort ? card.dataset.sort.trim() : "";
-      if (!value) return null;
-      const number = Number(value);
-      return Number.isFinite(number) ? number : null;
-    };
-
-    const getName = (card) => {
-      const heading = card.querySelector("h3");
-      return (card.dataset.agentName || (heading ? heading.textContent : ""))
-        .trim()
-        .toLocaleLowerCase();
-    };
-
-    cards
-      .sort((a, b) => {
-        const aSort = getSort(a);
-        const bSort = getSort(b);
-        const aHasSort = aSort !== null;
-        const bHasSort = bSort !== null;
-
-        if (aHasSort && bHasSort) {
-          return aSort - bSort || getName(a).localeCompare(getName(b));
-        }
-
-        if (aHasSort) return -1;
-        if (bHasSort) return 1;
-
-        return getName(a).localeCompare(getName(b));
-      })
-      .forEach((card) => grid.appendChild(card));
-  });
-}
-
 /* ============ Mount + interactions ============ */
 function mountChrome(activePath, prefix = "") {
   PREFIX = prefix;
@@ -224,8 +185,6 @@ function mountChrome(activePath, prefix = "") {
       const open = m.classList.toggle("open");
       t.innerHTML = open ? I.x : I.menu;
     });
-
-  sortTeamCards();
 
   // reveal observer
   const io = new IntersectionObserver(
