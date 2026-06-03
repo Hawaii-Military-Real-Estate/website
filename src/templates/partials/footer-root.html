@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <a class="logo" href="{{prefix}}index.html">
+          <span class="logo-mark">{{brandMark}}</span>
+          <span>{{brandFirst}} <span
+              style="color:var(--accent)">{{brandAccent}}</span><small>{{brandTagline}}</small></span>
+        </a>
+        <p style="margin-top:1rem;font-size:.92rem;color:rgba(255,255,255,.7);max-width:28rem">{{footerBlurb}}</p>
+        <div class="socials">{{{socialHtml}}}</div>
+      </div>
+      <div>
+        <h4>{{navHeading}}</h4>
+        <ul>{{{footerNavHtml}}}</ul>
+      </div>
+      <div>
+        <h4>{{contactHeading}}</h4>
+        <ul class="contact-list">
+          <li>{{{phoneIcon}}}<a href="{{phoneHref}}">{{phoneDisplay}}</a></li>
+          <li>{{{mailIcon}}}<a href="mailto:{{email}}">{{email}}</a></li>
+          <li>{{{mapPinIcon}}}<span>{{address}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright container">© {{year}} {{copyright}}</div>
+</footer>

@@ -1,0 +1,47 @@
+<section class="agent-hero">
+  <img class="bg" src="../assets/hero-bg-team.jpg" alt="" />
+  <div class="ovr"></div>
+  <div class="container">
+    <div class="wrap">
+      <a class="back-link" href="../team.html">{{{arrowLeftIcon}}} Back to Team</a>
+      <div class="agent-hero-grid">
+        <div class="avatar-circle">
+          <div class="photo">
+            <img src="../assets/{{agent.image}}" alt="{{agent.name}}" />
+          </div>
+        </div>
+        <div>
+          <div class="role-tag">{{agent.roleTag}}</div>
+          <h1>{{agent.name}}</h1>
+          <div class="underline"></div>
+          <p class="tagline">{{agent.tagline}}</p>
+          <a class="cta" href="{{phoneHref}}">{{{phoneIcon}}} {{phoneDisplay}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="about-split">
+    <div class="reveal">
+      <h2>{{agent.aboutTitle}}</h2>
+      <div class="ul"></div>
+      <div class="text">{{{aboutHtml}}}</div>
+      <span class="sig">{{agent.shortName}}</span>
+    </div>
+    <div class="reveal">
+      <div class="photo-frame">
+        <img src="../assets/{{agent.image}}" alt="{{agent.name}}" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="badges-card">
+    <div class="badges-grid">{{{badgesHtml}}}</div>
+  </div>
+</section>
+
+{{{sectionRowsHtml}}}

@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="container header-row">
+    <a href="{{prefix}}index.html" class="brand" aria-label="{{brandName}}">
+      <span class="brand-mark">{{{homeMarkIcon}}}</span>
+      <span class="brand-text">
+        <span class="brand-name">{{brandShortName}}</span>
+        <span class="brand-sub">{{brandSubName}}</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">{{{navHtml}}}</nav>
+    <a href="{{phoneHref}}" class="call-btn">{{{phoneIcon}}}{{phoneDisplay}}</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" data-menu-btn
+      data-menu-target="#assetMobileNav">
+      <span data-menu-open>{{{menuIcon}}}</span>
+      <span data-menu-close hidden>{{{closeIcon}}}</span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="assetMobileNav" data-mobile-nav>
+    <div class="container inner">
+      {{{mobileNavHtml}}}
+      <a href="{{phoneHref}}" class="call-btn-mobile">{{{phoneIcon}}}{{phoneDisplay}}</a>
+    </div>
+  </div>
+</header>

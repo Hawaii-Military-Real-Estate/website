@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="container grid">
+    <div>
+      <a href="{{prefix}}index.html" class="brand light" aria-label="{{brandName}}">
+        <span class="brand-mark">{{{homeMarkIcon}}}</span>
+        <span class="brand-text">
+          <span class="brand-name">{{brandShortName}}</span>
+          <span class="brand-sub">{{brandSubName}}</span>
+        </span>
+      </a>
+      <p class="about">{{footerBlurb}}</p>
+      <div class="socials">{{{socialHtml}}}</div>
+    </div>
+    <div class="f-col">
+      <h4>{{navHeading}}</h4>
+      <ul>{{{footerNavHtml}}}</ul>
+    </div>
+    <div class="f-col">
+      <h4>{{contactHeading}}</h4>
+      <ul>
+        <li>{{{phoneIcon}}}<a href="{{phoneHref}}">{{phoneDisplay}}</a></li>
+        <li>{{{mailIcon}}}<a href="mailto:{{email}}">{{email}}</a></li>
+        <li>{{{mapPinIcon}}}<span>{{address}}</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <div class="container inner">© {{year}} {{copyright}}</div>
+  </div>
+</footer>

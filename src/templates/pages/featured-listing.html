@@ -1,0 +1,37 @@
+<section class="listing-hero">
+  <div class="bg"><img src="assets/{{hero.image}}" alt="{{hero.imageAlt}}" width="1600" height="900" /></div>
+  <div class="listing-hero-inner reveal">
+    <span class="featured-pill">{{{homeIcon}}} {{hero.eyebrow}}</span>
+    <h1>{{hero.heading}}</h1>
+    <p class="addr">{{{mapPinIcon}}} {{hero.address}}</p>
+    <div class="price-row"><span class="price">{{hero.price}}</span><span class="va">{{hero.valueNote}}</span></div>
+  </div>
+</section>
+
+<section class="specs-bar reveal">
+  <div class="inner">{{{specsHtml}}}</div>
+</section>
+
+<section class="listing-grid">
+  <div class="reveal">
+    <div class="eyebrow">{{overview.eyebrow}}</div>
+    <h2 class="display">{{overview.heading}}</h2>
+    <div class="prose">{{{overviewHtml}}}</div>
+
+    <h3 class="sub">{{highlightsHeading}}</h3>
+    <ul class="highlights">{{{highlightsHtml}}}</ul>
+
+    <h3 class="sub">{{detailsHeading}}</h3>
+    <dl class="details">{{{detailsHtml}}}</dl>
+  </div>
+
+  <div class="reveal">
+    <div class="tour-card">
+      <div class="ey">{{tour.eyebrow}}</div>
+      <h3>{{tour.heading}}</h3>
+      <p class="desc">{{tour.intro}}</p>
+      <div class="opts">{{{tourOptionsHtml}}}</div>
+      <p class="reply">{{tour.reply}}</p>
+    </div>
+  </div>
+</section>

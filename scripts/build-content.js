@@ -7,29 +7,21 @@ const content = require("../src/content.js");
 const root = path.resolve(__dirname, "..");
 const srcDir = path.join(root, "src");
 const buildDir = path.join(root, "build");
+const templatesDir = path.join(srcDir, "templates");
+const generatedComment =
+  "<!-- Generated into build/ from src/content.js by scripts/build-content.js. Do not edit generated output directly. -->";
 
-const phoneDisplay = "(808) 123-4567";
-const phoneHref = "tel:8081234567";
-
-const icons = {
-  arrowLeft:
-    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" /></svg>',
-  arrowRight:
-    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>',
-  phone:
-    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>',
-  star: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>',
-  shieldCheck:
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>',
-  home: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>',
-  hand: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12V4a2 2 0 1 1 4 0v8" /><path d="M11 12V4a2 2 0 0 0-4 0v10" /><path d="M3 14v3a4 4 0 0 0 4 4h2" /><path d="M21 12a9 9 0 0 1-9 9" /></svg>',
-  users:
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>',
-  award:
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>',
-  heart:
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>',
+const iconAliases = {
+  arrowLeft: "arrow-left",
+  arrowRight: "arrow-right",
+  checkCircle: "check-circle",
+  checkCircleOpen: "check-circle-open",
+  mapPin: "map-pin",
+  shieldCheck: "shield-check",
 };
+
+const templateCache = new Map();
+const iconCache = new Map();
 
 // Domain policies
 function sortAgents(agents) {
@@ -48,11 +40,79 @@ function sortAgents(agents) {
   });
 }
 
+function getFeaturedAgent() {
+  return (
+    sortAgents(content.agents).find(function (agent) {
+      return agent.featured === true;
+    }) || sortAgents(content.agents)[0]
+  );
+}
+
+function resolveHref(hrefKey) {
+  const contact = content.site.contact;
+
+  if (hrefKey === "email") return "mailto:" + contact.email;
+  if (hrefKey && contact[hrefKey]) return contact[hrefKey];
+
+  return hrefKey || "#";
+}
+
 // Application use cases
-function getTeamPageModel() {
+function getRootPageModels() {
+  return [
+    {
+      page: content.pages.home,
+      activePath: "index.html",
+      template: "pages/home.html",
+      cta: content.site.cta,
+    },
+    {
+      page: content.pages.services,
+      activePath: "services.html",
+      template: "pages/services.html",
+      cta: content.pages.services.cta,
+    },
+    {
+      page: content.pages.testimonials,
+      activePath: "testimonials.html",
+      template: "pages/testimonials.html",
+      cta: content.pages.testimonials.cta,
+    },
+    {
+      page: content.pages.contact,
+      activePath: "contact.html",
+      template: "pages/contact.html",
+      cta: content.pages.contact.cta,
+    },
+    {
+      page: content.pages.notFound,
+      activePath: "",
+      template: "pages/404.html",
+      cta: null,
+    },
+    {
+      page: content.team,
+      path: "team.html",
+      activePath: "team.html",
+      template: "pages/team.html",
+      cta: content.team.cta,
+    },
+    {
+      page: content.about,
+      path: "about.html",
+      activePath: "about.html",
+      template: "pages/about.html",
+      cta: content.about.cta,
+    },
+  ];
+}
+
+function getFeaturedListingModel() {
   return {
-    team: content.team,
-    agents: sortAgents(content.agents),
+    page: content.pages.featuredListing,
+    activePath: "featured-listing.html",
+    template: "pages/featured-listing.html",
+    cta: content.pages.featuredListing.cta,
   };
 }
 
@@ -62,376 +122,636 @@ function getAgentPageModels() {
   });
 }
 
-function getFeaturedAgent() {
-  return (
-    sortAgents(content.agents).find(function (agent) {
-      return agent.featured === true;
-    }) || sortAgents(content.agents)[0]
-  );
+// Presentation primitives
+function readTemplate(relativePath) {
+  if (!templateCache.has(relativePath)) {
+    templateCache.set(
+      relativePath,
+      fs.readFileSync(path.join(templatesDir, relativePath), "utf8"),
+    );
+  }
+
+  return templateCache.get(relativePath);
 }
 
-function getAboutPageModel() {
-  return {
-    about: content.about,
-    featuredAgent: getFeaturedAgent(),
-  };
-}
-
-function getStaticPageModels() {
-  return content.pages || [];
-}
-
-// Presentation helpers
 function escapeHtml(value) {
-  return String(value)
+  return String(value == null ? "" : value)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
 
-function attr(value) {
-  return escapeHtml(value);
+function getPathValue(source, dottedPath) {
+  return dottedPath.split(".").reduce(function (current, key) {
+    if (current == null) return "";
+    return current[key];
+  }, source);
 }
 
-function htmlList(items) {
-  return (items || []).join("\n");
+function renderString(template, data) {
+  return template
+    .replace(/\{\{\{\s*([\w.]+)\s*\}\}\}/g, function (_, key) {
+      return String(
+        getPathValue(data, key) == null ? "" : getPathValue(data, key),
+      );
+    })
+    .replace(/\{\{\s*([\w.]+)\s*\}\}/g, function (_, key) {
+      return escapeHtml(getPathValue(data, key));
+    });
 }
 
-function renderHead(options) {
-  const prefix = options.prefix || "";
-  return `<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>${escapeHtml(options.title)}</title>
-  <meta name="description" content="${attr(options.description)}" />
-  <meta property="og:title" content="${attr(options.title)}" />
-  <meta property="og:description" content="${attr(options.description)}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="${prefix}css/styles.css" />
-</head>`;
+function renderTemplate(relativePath, data) {
+  return renderString(readTemplate(relativePath), data);
 }
 
-function renderGeneratedComment() {
-  return "<!-- Generated into build/ from src/content.js by scripts/build-content.js. Do not edit generated output directly. -->";
+function icon(name) {
+  const fileName = iconAliases[name] || name;
+
+  if (!iconCache.has(fileName)) {
+    iconCache.set(
+      fileName,
+      readTemplate(path.join("icons", fileName + ".html")).trim(),
+    );
+  }
+
+  return iconCache.get(fileName);
+}
+
+function paragraphs(items) {
+  return (items || [])
+    .map(function (text) {
+      return renderTemplate("partials/paragraph.html", { text: text });
+    })
+    .join("\n");
+}
+
+function repeatHtml(html, times) {
+  return Array.from({ length: times }, function () {
+    return html;
+  }).join("\n");
+}
+
+function starRating(count) {
+  return Array.from({ length: count }, function () {
+    return icon("star");
+  }).join("");
 }
 
 function renderEyebrow(label) {
-  return `<span class="eyebrow-pill"><span style="
-                width: 6px;
-                height: 6px;
-                border-radius: 999px;
-                background: #fff;
-                display: inline-block;
-                opacity: 0.7;
-              "></span>
-          ${escapeHtml(label)}</span>`;
+  return renderTemplate("partials/eyebrow-pill.html", { label: label });
 }
 
-function renderTeamCard(agent) {
-  const sortAttr =
-    typeof agent.sort === "number" ? ` data-sort="${attr(agent.sort)}"` : "";
+function renderHeadRoot(page, prefix, extraHeadHtml) {
+  return renderTemplate("partials/head-root.html", {
+    title: page.title,
+    description: page.description || "",
+    prefix: prefix,
+    extraHeadHtml: extraHeadHtml || "",
+  });
+}
 
-  return `<div class="agent-card reveal" data-agent-card data-agent-name="${attr(agent.name)}"${sortAttr}>
-  <div class="media">
-    <img src="assets/${attr(agent.image)}" alt="${attr(agent.name)}" loading="lazy" />
-    <div class="overlay">
-      <h3>${escapeHtml(agent.name)}</h3>
-      <div class="yr">${escapeHtml(agent.cardMeta)}</div>
-    </div>
-  </div>
-  <div class="body">
-    <div class="role">${escapeHtml(agent.cardRole)}</div>
-    <a href="agents/${attr(agent.slug)}.html">View Profile -></a>
-  </div>
-</div>`;
+function renderHeadAsset(page, prefix, extraHeadHtml) {
+  return renderTemplate("partials/head-asset.html", {
+    title: page.title,
+    description: page.description || "",
+    ogTitle: page.ogTitle || page.title,
+    ogDescription: page.ogDescription || page.description || "",
+    prefix: prefix,
+    extraHeadHtml: extraHeadHtml || "",
+  });
+}
+
+function renderExtraHead(page) {
+  const rows = [];
+
+  if (page.robots)
+    rows.push(
+      '<meta name="robots" content="' + escapeHtml(page.robots) + '" />',
+    );
+  if (page.canonical)
+    rows.push(
+      '<link rel="canonical" href="' + escapeHtml(page.canonical) + '" />',
+    );
+  if (page.ogImage) {
+    rows.push(
+      '<meta property="og:image" content="' + escapeHtml(page.ogImage) + '" />',
+    );
+    rows.push(
+      '<meta name="twitter:image" content="' +
+        escapeHtml(page.ogImage) +
+        '" />',
+    );
+  }
+
+  return rows.join("\n  ");
+}
+
+function brandParts() {
+  return {
+    brandName: content.site.brand.name,
+    brandShortName: content.site.brand.shortName,
+    brandSubName: content.site.brand.subName,
+    brandMark: content.site.brand.mark,
+    brandFirst: "Hawaii",
+    brandAccent: "Military",
+    brandTagline: content.site.brand.tagline,
+  };
+}
+
+function renderNav(style, activePath, prefix, asFooter) {
+  const partial =
+    style === "asset"
+      ? "partials/nav-link-asset.html"
+      : "partials/nav-link-root.html";
+
+  return content.site.nav
+    .map(function (item) {
+      const href = prefix + item.href;
+      const isActive = activePath === item.href;
+      const linkHtml = renderTemplate(partial, {
+        href: href,
+        label: item.label,
+        activeClass: isActive ? "active" : "",
+        currentAttribute: isActive && !asFooter ? ' aria-current="page"' : "",
+      });
+
+      return asFooter ? "<li>" + linkHtml + "</li>" : linkHtml;
+    })
+    .join("");
+}
+
+function renderSocials() {
+  return content.site.social
+    .map(function (item) {
+      return renderTemplate("partials/social-link.html", {
+        href: item.href,
+        label: item.label,
+        iconHtml: icon(item.icon),
+      });
+    })
+    .join("");
+}
+
+function chromeData(style, activePath, prefix) {
+  const contact = content.site.contact;
+  const footer = content.site.footer;
+
+  return {
+    ...brandParts(),
+    prefix: prefix,
+    phoneHref: contact.phoneHref,
+    phoneDisplay: contact.phoneDisplay,
+    email: contact.email,
+    address: contact.address,
+    navHtml: renderNav(style, activePath, prefix, false),
+    mobileNavHtml: renderNav(style, activePath, prefix, false),
+    footerNavHtml: renderNav(style, activePath, prefix, true),
+    socialHtml: renderSocials(),
+    footerBlurb: footer.blurb,
+    navHeading: footer.navHeading,
+    contactHeading: footer.contactHeading,
+    copyright: footer.copyright,
+    year: new Date().getFullYear(),
+    phoneIcon: icon("phone"),
+    mailIcon: icon("mail"),
+    mapPinIcon: icon("mapPin"),
+    menuIcon: icon("menu"),
+    closeIcon: icon("x"),
+    homeMarkIcon: icon("home-mark"),
+  };
+}
+
+function renderHeader(style, activePath, prefix) {
+  return renderTemplate(
+    style === "asset"
+      ? "partials/header-asset.html"
+      : "partials/header-root.html",
+    chromeData(style, activePath, prefix),
+  );
+}
+
+function renderFooter(style, activePath, prefix) {
+  return renderTemplate(
+    style === "asset"
+      ? "partials/footer-asset.html"
+      : "partials/footer-root.html",
+    chromeData(style, activePath, prefix),
+  );
+}
+
+function renderCta(style, cta, prefix) {
+  if (!cta) return "";
+
+  const merged = { ...content.site.cta, ...cta };
+  const contact = content.site.contact;
+
+  return renderTemplate(
+    style === "asset" ? "partials/cta-asset.html" : "partials/cta-root.html",
+    {
+      prefix: prefix,
+      eyebrow: merged.eyebrow,
+      title: merged.title,
+      subtitle: merged.subtitle,
+      note: merged.note,
+      primaryLabel: merged.primaryLabel || content.site.cta.primaryLabel,
+      secondaryLabel: merged.secondaryLabel || contact.email,
+      phoneHref: contact.phoneHref,
+      email: contact.email,
+      phoneIcon: icon("phone"),
+      mailIcon: icon("mail"),
+      arrowRightIcon: icon("arrowRight"),
+    },
+  );
+}
+
+function renderShell(options) {
+  return renderTemplate("layouts/" + options.style + ".html", {
+    headHtml: options.headHtml,
+    generatedComment: generatedComment,
+    headerHtml: options.headerHtml,
+    mainHtml: options.mainHtml,
+    ctaHtml: options.ctaHtml || "",
+    footerHtml: options.footerHtml,
+    scriptPath: options.scriptPath,
+  });
+}
+
+function renderRootPage(options) {
+  const prefix = options.prefix || "";
+
+  return renderShell({
+    style: "root",
+    headHtml: renderHeadRoot(
+      options.page,
+      prefix,
+      renderExtraHead(options.page),
+    ),
+    headerHtml: renderHeader("root", options.activePath, prefix),
+    mainHtml: options.mainHtml,
+    ctaHtml: renderCta("root", options.cta, prefix),
+    footerHtml: renderFooter("root", options.activePath, prefix),
+    scriptPath: prefix + "js/site.js",
+  });
+}
+
+function renderAssetPage(options) {
+  const prefix = options.prefix || "";
+
+  return renderShell({
+    style: "asset",
+    headHtml: renderHeadAsset(
+      options.page,
+      prefix,
+      renderExtraHead(options.page),
+    ),
+    headerHtml: renderHeader("asset", options.activePath, prefix),
+    mainHtml: options.mainHtml,
+    ctaHtml: renderCta("asset", options.cta, prefix),
+    footerHtml: renderFooter("asset", options.activePath, prefix),
+    scriptPath: prefix + "js/site.js",
+  });
+}
+
+// Presentation composites
+function renderPageHero(hero) {
+  return renderTemplate("pages/page-hero.html", {
+    image: hero.image,
+    eyebrowHtml: renderEyebrow(hero.eyebrow),
+    heading: hero.heading,
+    introHtml: paragraphs([hero.intro]),
+  });
+}
+
+function renderHomePage(model) {
+  const page = model.page;
+  const testimonials = renderTestimonials(content.shared.testimonials, 4);
+
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    phoneHref: content.site.contact.phoneHref,
+    phoneIcon: icon("phone"),
+    arrowRightIcon: icon("arrowRight"),
+    starsHtml: starRating(5),
+    shieldIcon: icon("shield"),
+    heroStatsHtml: page.hero.imageStats.map(renderHeroStat).join(""),
+    trustBarHtml: page.trustBar.map(renderHomeTrustItem).join(""),
+    whyCardsHtml: page.why.cards.map(renderWhyCard).join("\n"),
+    processStepsHtml: page.process.steps
+      .map(function (step) {
+        return renderTemplate("partials/process-step-number.html", step);
+      })
+      .join("\n"),
+    testimonialsHtml: testimonials,
+  });
+
+  return renderRootPage({ ...model, mainHtml: mainHtml });
+}
+
+function renderHeroStat(item) {
+  return renderTemplate("partials/hero-stat.html", item);
+}
+
+function renderHomeTrustItem(item) {
+  return renderTemplate("partials/home-trust-item.html", {
+    ...item,
+    iconHtml: icon(item.icon),
+  });
+}
+
+function renderWhyCard(card) {
+  const bulletsHtml = card.bullets
+    .map(function (text) {
+      return renderTemplate("partials/check-list-item.html", {
+        text: text,
+        checkIcon: icon("check"),
+      });
+    })
+    .join("\n");
+
+  return renderTemplate("partials/why-card.html", {
+    ...card,
+    bulletsHtml: bulletsHtml,
+  });
+}
+
+function renderServiceCard(card) {
+  const bulletsHtml = card.bullets
+    .map(function (text) {
+      return renderTemplate("partials/service-list-item.html", {
+        text: text,
+        checkIcon: icon("checkCircle"),
+      });
+    })
+    .join("\n");
+
+  return renderTemplate("partials/service-card.html", {
+    ...card,
+    bulletsHtml: bulletsHtml,
+  });
+}
+
+function renderServicesPage(model) {
+  const page = model.page;
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    heroHtml: renderPageHero(page.hero),
+    serviceCardsHtml: page.cards.map(renderServiceCard).join("\n"),
+    processStepsHtml: page.process.steps
+      .map(function (step) {
+        return renderTemplate("partials/process-step-icon.html", {
+          ...step,
+          iconHtml: icon(step.icon),
+        });
+      })
+      .join("\n"),
+  });
+
+  return renderRootPage({ ...model, mainHtml: mainHtml });
+}
+
+function renderTestimonialsPage(model) {
+  const page = model.page;
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    heroHtml: renderPageHero(page.hero),
+    testimonialsHtml: renderTestimonials(content.shared.testimonials, 4),
+    statsHtml: page.stats
+      .map(function (stat) {
+        return renderTemplate("partials/stat-card.html", stat);
+      })
+      .join("\n"),
+  });
+
+  return renderRootPage({ ...model, mainHtml: mainHtml });
+}
+
+function renderContactPage(model) {
+  const page = model.page;
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    heroHtml: renderPageHero(page.hero),
+    methodsHtml: page.methods
+      .map(function (method) {
+        return renderTemplate("partials/contact-method.html", {
+          ...method,
+          href: resolveHref(method.hrefKey),
+          iconHtml: icon(method.icon),
+        });
+      })
+      .join(""),
+    infoCardsHtml: page.infoCards
+      .map(function (card) {
+        return renderTemplate("partials/contact-info-card.html", {
+          ...card,
+          iconHtml: icon(card.icon),
+        });
+      })
+      .join("\n"),
+  });
+
+  return renderRootPage({ ...model, mainHtml: mainHtml });
 }
 
 function renderTeamPage(model) {
-  return `<!doctype html>
-<html lang="en">
+  const page = content.team;
+  const heroHtml = renderPageHero({
+    image: "hero-bg-team.jpg",
+    eyebrow: page.eyebrow,
+    heading: page.heading,
+    intro: page.intro[0],
+  });
+  const mainHtml = renderTemplate(model.template, {
+    heroHtml: heroHtml,
+    teamCardsHtml: sortAgents(content.agents).map(renderTeamCard).join("\n"),
+  });
 
-${renderHead({
-  title: model.team.title,
-  description: model.team.description,
-  prefix: "",
-})}
-
-<body>
-  ${renderGeneratedComment()}
-  <div id="header-mount"></div>
-
-  <section class="page-hero">
-    <img class="bg" src="assets/hero-bg-team.jpg" alt="" />
-    <div class="ovr"></div>
-    <div class="ovr2"></div>
-    <div class="container">
-      <div class="inner reveal">
-        ${renderEyebrow(model.team.eyebrow)}
-        <h1>${escapeHtml(model.team.heading)}</h1>
-        ${model.team.introHtml}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="team-grid" data-team-grid>
-        ${model.agents.map(renderTeamCard).join("\n")}
-      </div>
-    </div>
-  </section>
-
-  <div data-cta data-title="${attr(model.team.cta.title)}"
-    data-subtitle="${attr(model.team.cta.subtitle)}"
-    data-note="${attr(model.team.cta.note)}"></div>
-
-  <div id="footer-mount"></div>
-  <script src="js/site.js"></script>
-  <script>
-    mountChrome("team.html", "");
-  </script>
-</body>
-
-</html>`;
+  return renderRootPage({ ...model, page: page, mainHtml: mainHtml });
 }
 
-function renderBackgroundCard(card) {
-  return `<div class="bg-card reveal">
-  <div class="icon-box">
-    ${icons[card.icon] || icons.star}
-  </div>
-  <h3>${escapeHtml(card.title)}</h3>
-  <p>${escapeHtml(card.text)}</p>
-</div>`;
+function renderTeamCard(agent) {
+  return renderTemplate("partials/team-card.html", {
+    ...agent,
+    prefix: "",
+    profileHref: "agents/" + agent.slug + ".html",
+    sortAttribute:
+      typeof agent.sort === "number"
+        ? ' data-sort="' + escapeHtml(agent.sort) + '"'
+        : "",
+  });
 }
 
 function renderAboutPage(model) {
-  const about = model.about;
-  const agent = model.featuredAgent;
-  const featuredHtml = agent.featuredAboutHtml || agent.aboutHtml || [];
+  const page = content.about;
+  const featuredAgent = getFeaturedAgent();
+  const featuredAbout =
+    featuredAgent.featuredAbout && featuredAgent.featuredAbout.length
+      ? featuredAgent.featuredAbout
+      : featuredAgent.about;
+  const heroHtml = renderPageHero({
+    image: "hero-bg-about.jpg",
+    eyebrow: page.eyebrow,
+    heading: page.heading,
+    intro: page.intro[0],
+  });
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    heroHtml: heroHtml,
+    featuredAgent: featuredAgent,
+    featuredAboutHtml: paragraphs(featuredAbout),
+    backgroundCardsHtml: page.cards.map(renderBackgroundCard).join("\n"),
+    arrowRightIcon: icon("arrowRight"),
+  });
 
-  return `<!doctype html>
-<html lang="en">
+  return renderRootPage({ ...model, page: page, mainHtml: mainHtml });
+}
 
-${renderHead({
-  title: about.title,
-  description: about.description,
-  prefix: "",
-})}
+function renderBackgroundCard(card) {
+  return renderTemplate("partials/background-card.html", {
+    ...card,
+    iconHtml: icon(card.icon),
+  });
+}
 
-<body>
-  ${renderGeneratedComment()}
-  <div id="header-mount"></div>
+function renderAgentPage(model) {
+  const agent = model.agent;
+  const page = {
+    title: agent.title,
+    description: agent.description,
+  };
+  const mainHtml = renderTemplate("pages/agent.html", {
+    agent: agent,
+    phoneHref: content.site.contact.phoneHref,
+    phoneDisplay: content.site.contact.phoneDisplay,
+    phoneIcon: icon("phone"),
+    arrowLeftIcon: icon("arrowLeft"),
+    aboutHtml: paragraphs(agent.about),
+    badgesHtml: agent.badges.map(renderBadge).join("\n"),
+    sectionRowsHtml: renderSectionRows(agent.sections),
+  });
 
-  <section class="page-hero">
-    <img class="bg" src="assets/hero-bg-about.jpg" alt="" />
-    <div class="ovr"></div>
-    <div class="ovr2"></div>
-    <div class="container">
-      <div class="inner reveal">
-        ${renderEyebrow(about.eyebrow)}
-        <h1>${escapeHtml(about.heading)}</h1>
-        ${about.introHtml}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="split">
-        <div class="reveal">
-          <img src="assets/${attr(agent.image)}" alt="${attr(agent.name)}" loading="lazy" />
-        </div>
-        <div class="reveal">
-          <div class="eyebrow-mini">${escapeHtml(about.featuredEyebrow)}</div>
-          <h2 class="mt-4" style="font-size: clamp(1.75rem, 3vw, 2.25rem)">
-            ${escapeHtml(agent.name)}
-          </h2>
-          <div class="mt-6 muted" style="
-                display: flex;
-                flex-direction: column;
-                gap: 1.1rem;
-                line-height: 1.7;
-              ">
-            ${htmlList(featuredHtml)}
-          </div>
-          <a class="btn btn-dark mt-6" href="agents/${attr(agent.slug)}.html">${escapeHtml(about.featuredCtaLabel)}
-            ${icons.arrowRight}</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow-mini">${escapeHtml(about.backgroundEyebrow)}</div>
-        <h2>${escapeHtml(about.backgroundHeading)}</h2>
-      </div>
-      <div class="bg-cards">
-        ${about.cards.map(renderBackgroundCard).join("\n")}
-      </div>
-    </div>
-  </section>
-
-  <div data-cta data-title="${attr(about.cta.title)}"
-    data-subtitle="${attr(about.cta.subtitle)}"
-    data-note="${attr(about.cta.note)}"></div>
-
-  <div id="footer-mount"></div>
-  <script src="js/site.js"></script>
-  <script>
-    mountChrome("about.html", "");
-  </script>
-</body>
-
-</html>`;
+  return renderRootPage({
+    page: page,
+    activePath: "team.html",
+    prefix: "../",
+    cta: agent.cta,
+    mainHtml: mainHtml,
+  });
 }
 
 function renderBadge(badge) {
-  return `<div class="badge-item reveal">
-  <div class="icon-box">
-    ${icons[badge.icon] || icons.star}
-  </div>
-  <h3>${escapeHtml(badge.title)}</h3>
-  <p>${escapeHtml(badge.text)}</p>
-</div>`;
+  return renderTemplate("partials/badge-card.html", {
+    ...badge,
+    iconHtml: icon(badge.icon),
+  });
 }
 
 function renderPills(pills) {
   if (!pills || !pills.length) return "";
 
-  return `<div class="pills">
-  ${pills
-    .map(function (pill) {
-      return `<span>${escapeHtml(pill)}</span>`;
-    })
-    .join("")}
-</div>`;
+  return renderTemplate("partials/pills.html", {
+    itemsHtml: pills
+      .map(function (pill) {
+        return renderTemplate("partials/pill.html", { label: pill });
+      })
+      .join(""),
+  });
 }
 
 function renderContentSection(section) {
-  return `<div class="reveal">
-  <h2>${escapeHtml(section.title)}</h2>
-  <div class="ul"></div>
-  ${htmlList(section.html)}
-  ${renderPills(section.pills)}
-</div>`;
+  return renderTemplate("partials/content-section.html", {
+    title: section.title,
+    paragraphsHtml: paragraphs(section.paragraphs),
+    pillsHtml: renderPills(section.pills),
+  });
 }
 
 function renderSectionRows(sections) {
   const rows = [];
 
   for (let index = 0; index < sections.length; index += 2) {
-    rows.push(`<section class="container">
-  <div class="two-col">
-    ${sections
-      .slice(index, index + 2)
-      .map(renderContentSection)
-      .join("\n")}
-  </div>
-</section>`);
+    rows.push(
+      renderTemplate("partials/section-row.html", {
+        sectionsHtml: sections
+          .slice(index, index + 2)
+          .map(renderContentSection)
+          .join("\n"),
+      }),
+    );
   }
 
   return rows.join("\n\n");
 }
 
-function renderAgentPage(model) {
-  const agent = model.agent;
+function renderTestimonials(items, repetitions) {
+  const cardsHtml = items
+    .map(function (testimonial) {
+      return renderTemplate("partials/testimonial-card.html", {
+        ...testimonial,
+        starsHtml: starRating(5),
+        quoteIcon: icon("quote"),
+      });
+    })
+    .join("\n");
 
-  return `<!doctype html>
-<html lang="en">
+  return repeatHtml(cardsHtml, repetitions || 1);
+}
 
-${renderHead({
-  title: agent.title,
-  description: agent.description,
-  prefix: "../",
-})}
+function renderFeaturedListingPage(model) {
+  const page = model.page;
+  const mainHtml = renderTemplate(model.template, {
+    ...page,
+    homeIcon: icon("home"),
+    mapPinIcon: icon("mapPin"),
+    specsHtml: page.specs
+      .map(function (spec) {
+        return renderTemplate("partials/listing-spec.html", {
+          ...spec,
+          iconHtml: icon(spec.icon),
+        });
+      })
+      .join("\n"),
+    overviewHtml: paragraphs(page.overview.paragraphs),
+    highlightsHtml: page.highlights
+      .map(function (text) {
+        return renderTemplate("partials/listing-highlight.html", {
+          text: text,
+          iconHtml: icon("checkCircleOpen"),
+        });
+      })
+      .join("\n"),
+    detailsHtml: page.details
+      .map(function (detail) {
+        return renderTemplate("partials/listing-detail.html", detail);
+      })
+      .join("\n"),
+    tourOptionsHtml: page.tour.options
+      .map(function (option, index) {
+        return renderTemplate("partials/listing-tour-option.html", {
+          ...option,
+          href: resolveHref(option.hrefKey),
+          variantClass: index === 0 ? "" : "glass",
+          iconHtml: icon(option.icon),
+        });
+      })
+      .join("\n"),
+  });
 
-<body>
-  ${renderGeneratedComment()}
-  <div id="header-mount"></div>
+  return renderAssetPage({ ...model, mainHtml: mainHtml });
+}
 
-  <section class="agent-hero">
-    <img class="bg" src="../assets/hero-bg-team.jpg" alt="" />
-    <div class="ovr"></div>
-    <div class="container">
-      <div class="wrap">
-        <a class="back-link" href="../team.html">${icons.arrowLeft}
-          Back to Team</a>
-        <div class="agent-hero-grid">
-          <div class="avatar-circle">
-            <div class="photo">
-              <img src="../assets/${attr(agent.image)}" alt="${attr(agent.name)}" />
-            </div>
-          </div>
-          <div>
-            <div class="role-tag">${escapeHtml(agent.roleTag)}</div>
-            <h1>${escapeHtml(agent.name)}</h1>
-            <div class="underline"></div>
-            <p class="tagline">
-              ${escapeHtml(agent.tagline)}
-            </p>
-            <a class="cta" href="${phoneHref}">${icons.phone}
-              ${phoneDisplay}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+function renderNotFoundPage(model) {
+  const page = model.page;
+  const mainHtml = renderTemplate(model.template, page);
 
-  <section class="container">
-    <div class="about-split">
-      <div class="reveal">
-        <h2>${escapeHtml(agent.aboutTitle)}</h2>
-        <div class="ul"></div>
-        <div class="text">
-          ${htmlList(agent.aboutHtml)}
-        </div>
-        <span class="sig">${escapeHtml(agent.shortName)}</span>
-      </div>
-      <div class="reveal">
-        <div class="photo-frame">
-          <img src="../assets/${attr(agent.image)}" alt="${attr(agent.name)}" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <div class="badges-card">
-      <div class="badges-grid">
-        ${agent.badges.map(renderBadge).join("\n")}
-      </div>
-    </div>
-  </section>
-
-  ${renderSectionRows(agent.sections)}
-
-  <div data-cta data-title="${attr(agent.cta.title)}"
-    data-subtitle="${attr(agent.cta.subtitle)}"
-    data-note="${attr(agent.cta.note)}"></div>
-
-  <div id="footer-mount"></div>
-  <script src="../js/site.js"></script>
-  <script>
-    mountChrome("team.html", "../");
-  </script>
-</body>
-
-</html>`;
+  return renderRootPage({ ...model, page: page, mainHtml: mainHtml });
 }
 
 // Infrastructure
 function writeFile(relativePath, html) {
   const target = path.join(buildDir, relativePath);
   fs.mkdirSync(path.dirname(target), { recursive: true });
-  fs.writeFileSync(target, html + "\n", "utf8");
+  fs.writeFileSync(target, html.trimEnd() + "\n", "utf8");
 }
 
 function shouldCopySourceFile(relativePath) {
@@ -439,8 +759,18 @@ function shouldCopySourceFile(relativePath) {
 
   if (normalized === "content.js") return false;
   if (normalized === "README.md") return false;
+  if (normalized.startsWith("templates/")) return false;
   if (/\.html$/i.test(normalized)) return false;
   if (/^agents\/.*\.html$/i.test(normalized)) return false;
+
+  return true;
+}
+
+function shouldCopySourceDirectory(relativePath) {
+  const normalized = relativePath.replace(/\\/g, "/");
+
+  if (normalized === "templates" || normalized.startsWith("templates/"))
+    return false;
 
   return true;
 }
@@ -455,6 +785,7 @@ function copyDirectory(sourceDir, targetDir, relativeBase) {
     const stat = fs.statSync(source);
 
     if (stat.isDirectory()) {
+      if (!shouldCopySourceDirectory(relativePath)) return;
       copyDirectory(source, target, relativePath);
       return;
     }
@@ -489,20 +820,32 @@ function prepareBuildDirectory() {
   copyDirectory(srcDir, buildDir, "");
 }
 
-function main() {
-  const aboutModel = getAboutPageModel();
-  const teamModel = getTeamPageModel();
-  const agentModels = getAgentPageModels();
-  const staticPageModels = getStaticPageModels();
+function renderRootModel(model) {
+  if (model.template === "pages/home.html") return renderHomePage(model);
+  if (model.template === "pages/services.html")
+    return renderServicesPage(model);
+  if (model.template === "pages/testimonials.html")
+    return renderTestimonialsPage(model);
+  if (model.template === "pages/contact.html") return renderContactPage(model);
+  if (model.template === "pages/team.html") return renderTeamPage(model);
+  if (model.template === "pages/about.html") return renderAboutPage(model);
+  if (model.template === "pages/404.html") return renderNotFoundPage(model);
 
+  throw new Error("No renderer registered for " + model.template);
+}
+
+function main() {
   prepareBuildDirectory();
 
-  staticPageModels.forEach(function (page) {
-    writeFile(page.path, page.html);
+  getRootPageModels().forEach(function (model) {
+    const outputPath = model.path || model.page.path;
+    writeFile(outputPath, renderRootModel(model));
   });
-  writeFile("about.html", renderAboutPage(aboutModel));
-  writeFile("team.html", renderTeamPage(teamModel));
-  agentModels.forEach(function (model) {
+
+  const listingModel = getFeaturedListingModel();
+  writeFile(listingModel.page.path, renderFeaturedListingPage(listingModel));
+
+  getAgentPageModels().forEach(function (model) {
     writeFile(
       path.join("agents", model.agent.slug + ".html"),
       renderAgentPage(model),
@@ -511,11 +854,10 @@ function main() {
 
   console.log(
     "Rendered " +
-      staticPageModels.length +
-      " static build pages, build/team.html, " +
-      "build/about.html and " +
-      agentModels.length +
-      " build/agents profile pages.",
+      (getRootPageModels().length + 1) +
+      " root/listing pages and " +
+      getAgentPageModels().length +
+      " agent profile pages into build/.",
   );
 }
 

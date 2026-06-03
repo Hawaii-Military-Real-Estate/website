@@ -1,10 +1,10 @@
 # Hawaii Military Real Estate — Static Site
 
-Mostly hand-coded CSS, JS, assets, and content. All public HTML pages are generated into `../build/` before publishing so visible page content stays DRY and easy to maintain.
+Mostly hand-coded CSS, JS, assets, plain-text content, and build templates. All public HTML pages are generated into `../build/` before publishing so copy stays DRY and page rendering does minimal browser-side work.
 
 ## Build step
 
-Edit visible page content in **`content.js`**, then render the publish directory:
+Edit visible page copy in **`content.js`**, then render the publish directory:
 
 ```bash
 ../build.sh
@@ -17,11 +17,17 @@ The build renders:
 - `../build/team.html`
 - `../build/agents/*.html`
 
-Generated markup includes a comment near the top of generated pages. Do not edit generated files in `../build/` directly; update `content.js` and rebuild.
+Generated markup includes a comment near the top of generated pages. Do not edit generated files in `../build/` directly; update `content.js` or `templates/` and rebuild.
 
 The `../build/` directory is ignored by git. GitHub Pages builds it in the workflow and publishes that directory.
 
-`content.js` supports HTML strings for rich copy, so content can include paragraphs, line breaks, links, spans, or other inline markup where needed.
+## Content and templates
+
+- **`content.js`** contains plain text values, arrays, page data, agent data, contact details, nav labels, and CTA copy.
+- **`templates/`** contains HTML structure, classes, layout, partials, and SVG icon markup.
+- **`js/site.js`** contains browser interactions only: mobile menu behavior and reveal-on-scroll.
+
+Do not put HTML strings in `content.js`. If copy needs separate paragraphs, use arrays of plain text strings and let the build templates render the markup.
 
 Agent ordering is controlled by the optional `sort` value in `content.js`. Agents with a numeric `sort` appear first by number; agents without a sort value appear after them alphabetically.
 
@@ -29,53 +35,52 @@ The About page's featured profile comes from the agent with `featured: true`.
 
 ## File layout
 
-```
+```text
 robots.txt
 content.js
 assets/
   css/styles.css
-  js/site.js
-  images/...
+  *.jpg
+css/styles.css
+js/site.js
+templates/
+  layouts/
+  pages/
+  partials/
+  icons/
 ```
 
 All `.html` pages are generated into `../build/`.
 
-## Editing global things (one place each)
+## Editing global things
 
-Open **`js/site.js`** — top of the file:
+Open **`content.js`**:
 
-- **`SITE`** — phone, email, address, nav, social links, and default CTA
+- **`site`** — brand, phone, email, address, nav, social links, footer, and default CTA text
+- **`pages`** — home, services, testimonials, contact, featured listing, and 404 copy
+- **`team`**, **`about`**, and **`agents`** — team page and profile copy
 
-To override the CTA copy on a specific page, set data-attributes on the placeholder, e.g.:
+Open **`templates/`** to change page structure, classes, layout, or repeated markup.
 
-```html
-<div
-  id="site-cta"
-  data-title="Let's Work Together"
-  data-subtitle="Call or text us today."
-  data-note="Available 7 days a week."
-></div>
-```
+## Editing colors / design tokens
 
-## Editing colours / design tokens
-
-Open **`assets/css/styles.css`** — `:root` block at the top. Change the hex
-values for `--primary`, `--accent`, `--ocean-deep`, etc., and the whole site
-updates.
+Open **`assets/css/styles.css`** or **`css/styles.css`** — `:root` block at the top. Change the hex values for `--primary`, `--accent`, `--ocean-deep`, etc., and the related generated pages update after rebuild.
 
 ## Performance
 
-- No frameworks, no bundlers — pages are <30 KB HTML each
-- Single shared CSS + JS (cached after first load)
-- Images are lazy-loaded except the LCP hero, which is preloaded
-- Reveal-on-scroll uses `IntersectionObserver` (free, native)
+- No frameworks, no bundlers
+- Public HTML is build-rendered from templates
+- Single shared interaction script for menu and reveal effects
+- Images are lazy-loaded where appropriate
 
 ## Adding a new page
 
-1. Add the page object to `content.js`
-2. Add the link to `SITE.nav` in `js/site.js`
-3. Run `../build.sh`
-4. Preview with `../preview.sh`
+1. Add the page data to `content.js`
+2. Add or update the page template in `templates/pages/`
+3. Add reusable markup in `templates/partials/` if needed
+4. Add the nav link in `content.js` if the page belongs in the menu
+5. Run `../build.sh`
+6. Preview with `../preview.sh`
 
 ## Adding a new agent
 

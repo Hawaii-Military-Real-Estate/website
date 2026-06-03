@@ -1,0 +1,83 @@
+<section class="hero">
+  <div class="container wrap">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> {{hero.eyebrow}}</span>
+      <h1>{{hero.title}} <span class="grad">{{hero.titleAccent}}</span></h1>
+      <p class="lead">{{hero.lead}}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{phoneHref}}">{{{phoneIcon}}} {{hero.primaryLabel}} {{{arrowRightIcon}}}</a>
+        <a class="btn btn-outline" href="{{hero.secondaryHref}}">{{hero.secondaryLabel}}</a>
+      </div>
+      <div class="trust">
+        <div class="avatar-stack">
+          <img src="assets/avatar-1.jpg" alt="" /><img src="assets/avatar-2.jpg" alt="" /><img src="assets/avatar-3.jpg"
+            alt="" /><img src="assets/avatar-4.jpg" alt="" /><span>{{hero.avatarCount}}</span>
+        </div>
+        <div>
+          <div class="stars">{{{starsHtml}}}<strong style="color: var(--fg); margin-left: 6px">{{hero.rating}}</strong>
+          </div>
+          <div style="font-size: 0.72rem; color: var(--muted-fg); margin-top: 2px;">{{hero.ratingLabel}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-img-wrap">
+        <div class="hero-img">
+          <img src="assets/{{hero.image}}" alt="{{hero.imageAlt}}" />
+          <div
+            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28, 58, 99, 0.7), transparent);">
+          </div>
+          <div class="glass">{{{heroStatsHtml}}}</div>
+        </div>
+        <div class="floating-card">
+          <div class="icon">{{{shieldIcon}}}</div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.78rem">{{hero.badgeTitle}}</div>
+            <div style="font-size: 0.65rem; color: var(--muted-fg)">{{hero.badgeSubtitle}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="grid">{{{trustBarHtml}}}</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow-mini">{{why.eyebrow}}</div>
+      <h2>{{why.heading}}</h2>
+      <p>{{why.intro}}</p>
+    </div>
+    <div class="cards-grid">{{{whyCardsHtml}}}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="max-width: 42rem">
+      <div class="eyebrow-mini"
+        style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--primary);">
+        {{process.eyebrow}}</div>
+      <h2 style="margin-top: 0.7rem; font-size: clamp(1.6rem, 3vw, 2.25rem)">{{process.heading}}</h2>
+    </div>
+    <div class="steps mt-8">{{{processStepsHtml}}}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow-mini">{{testimonials.eyebrow}}</div>
+      <h2>{{testimonials.heading}}</h2>
+    </div>
+    <div class="marquee-wrap">
+      <div class="marquee">{{{testimonialsHtml}}}</div>
+    </div>
+  </div>
+</section>

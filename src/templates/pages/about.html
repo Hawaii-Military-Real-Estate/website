@@ -1,0 +1,30 @@
+{{{heroHtml}}}
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <img src="assets/{{featuredAgent.image}}" alt="{{featuredAgent.name}}" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <div class="eyebrow-mini">{{featuredEyebrow}}</div>
+        <h2 class="mt-4" style="font-size: clamp(1.75rem, 3vw, 2.25rem)">{{featuredAgent.name}}</h2>
+        <div class="mt-6 muted" style="display: flex; flex-direction: column; gap: 1.1rem; line-height: 1.7;">
+          {{{featuredAboutHtml}}}
+        </div>
+        <a class="btn btn-dark mt-6" href="agents/{{featuredAgent.slug}}.html">{{featuredCtaLabel}}
+          {{{arrowRightIcon}}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow-mini">{{backgroundEyebrow}}</div>
+      <h2>{{backgroundHeading}}</h2>
+    </div>
+    <div class="bg-cards">{{{backgroundCardsHtml}}}</div>
+  </div>
+</section>

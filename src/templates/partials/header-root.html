@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="container">
+    <div class="row">
+      <a class="logo" href="{{prefix}}index.html">
+        <span class="logo-mark">{{brandMark}}</span>
+        <span>{{brandFirst}} <span
+            style="color:var(--primary)">{{brandAccent}}</span><small>{{brandTagline}}</small></span>
+      </a>
+      <nav class="nav-desktop">{{{navHtml}}}</nav>
+      <a class="btn-call" href="{{phoneHref}}">{{{phoneIcon}}} {{phoneDisplay}}</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" data-menu-btn
+        data-menu-target="#navMobile">
+        <span data-menu-open>{{{menuIcon}}}</span>
+        <span data-menu-close hidden>{{{closeIcon}}}</span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">{{{mobileNavHtml}}}<a class="btn-call" href="{{phoneHref}}">{{{phoneIcon}}}
+      {{phoneDisplay}}</a></div>
+</header>
