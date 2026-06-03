@@ -521,6 +521,7 @@ function renderTestimonialsPage(model) {
         return renderTemplate("partials/stat-card.html", stat);
       })
       .join("\n"),
+    longFormHtml: renderLongFormTestimonials(page.longForm.testimonials),
   });
 
   return renderRootPage({ ...model, mainHtml: mainHtml });
@@ -695,6 +696,31 @@ function renderTestimonials(items, repetitions) {
     .join("\n");
 
   return repeatHtml(cardsHtml, repetitions || 1);
+}
+
+function excerpt(value, length) {
+  if (value.length <= length) return value;
+
+  return (
+    value
+      .slice(0, length)
+      .trim()
+      .replace(/[,.!?;:]+$/, "") + "…"
+  );
+}
+
+function renderLongFormTestimonials(items) {
+  return (items || [])
+    .map(function (testimonial) {
+      return renderTemplate("partials/long-testimonial-card.html", {
+        author: testimonial.author,
+        excerpt: excerpt(testimonial.body, 220),
+        summaryLabel: "Read full testimonial",
+        quoteIcon: icon("quote"),
+        bodyHtml: paragraphs([testimonial.body]),
+      });
+    })
+    .join("\n");
 }
 
 function renderFeaturedListingPage(model) {
