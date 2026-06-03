@@ -34,7 +34,7 @@ jobs:
           node-version: 20
 
       - name: Build site
-        run: ./build.sh
+        run: node scripts/build-content.js
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3

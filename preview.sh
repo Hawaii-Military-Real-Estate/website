@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(git rev-parse --show-toplevel)"
 
-./build.sh
+node scripts/build-content.js
 
 port="$(
   python3 - <<'PY'
