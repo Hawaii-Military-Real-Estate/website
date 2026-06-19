@@ -1,11 +1,11 @@
 const CONTENT = {
   site: {
     brand: {
-      name: "Hawaii Military Real Estate",
+      name: "Hawaii Military Realty",
       shortName: "Hawaii Military",
-      subName: "Real Estate",
-      mark: "HM",
-      tagline: "Ohana Owned · VA Loan Experts",
+      subName: "Realty",
+      mark: "HMR",
+      tagline: "Native Hawaiian Owned | Veteran Owned & Managed",
     },
     contact: {
       phoneDisplay: "(808) 123-4567",
@@ -54,18 +54,18 @@ const CONTENT = {
     ],
     footer: {
       blurb:
-        "Helping military families buy, sell and manage homes across Oahu and the neighbor islands. An ohana-owned business.",
+        "Native Hawaiian owned, veteran owned and managed real estate guidance for Oahu buyers, sellers, renters, property owners, military families, and service-minded clients.",
       navHeading: "Navigate",
       contactHeading: "Get in Touch",
       copyright:
-        "Hawaii Military Real Estate · An Ohana Owned Business. All Rights Reserved.",
+        "Hawaii Military Realty | Veteran-Owned. All Rights Reserved.",
     },
     cta: {
-      eyebrow: "Standing By for Your Mission",
-      title: "Ready to Make Your Move?",
+      eyebrow: "Mission-Ready Guidance",
+      title: "Get a Clear Plan for Your Oahu Move",
       subtitle:
-        "Whether you're PCSing in or out, we're here 7 days a week with Aloha service.",
-      note: "Replies within 2 hours during business hours.",
+        "PCS orders, VA-financed purchases, remote showings, renters, property management, and sale timelines handled with direct veteran-first communication.",
+      note: "Clear answers within 2 hours during business hours.",
       primaryLabel: "Call (808) 123-4567",
       secondaryLabel: "info@yourcompany.com",
     },
@@ -119,83 +119,90 @@ const CONTENT = {
   pages: {
     home: {
       path: "index.html",
-      title: "Hawaii Military Real Estate | PCS & VA Loan Specialists",
+      title: "Hawaii Military Realty | Oahu Military Real Estate Specialists",
       description:
-        "Serving military families across Oahu & neighbor islands. VA loan experts, remote closings, and local Hawaii knowledge.",
+        "Native Hawaiian veteran owned and managed Oahu real estate guidance for active duty, veterans, reservists, government civilians, government contractors, and service-minded clients.",
       hero: {
-        eyebrow: "Military Real Estate · Oahu & Beyond",
-        title: "Home is Where the",
-        titleAccent: "Mission Begins.",
-        lead: "Hawaii's #1 military real estate specialists. From VA loans to remote closings, we guide active duty, veterans and their families through every step. No stress. No guesswork. Just Aloha and results.",
+        eyebrow: "Native Veteran Hawaiian Owned & Managed",
+        title: "Hawaii's #1 Military",
+        titleAccent: "Real Estate Specialists Since 2011.",
+        lead: "A retired First Sergeant's approach to Oahu real estate: direct guidance, disciplined execution, and clear answers for active duty, veterans, reservists, government civilians, government contractors, military families, and anyone seeking excellent service, communication, and honesty.",
         primaryLabel: "Call (808) 123-4567",
-        secondaryLabel: "Explore Services",
+        secondaryLabel: "Review Services",
         secondaryHref: "services.html",
         avatarCount: "+500",
         rating: "4.9",
-        ratingLabel: "500+ Happy Military Families",
-        image: "hero-hawaii.jpg",
-        imageAlt: "Aerial Hawaiian coastline",
+        ratingLabel: "500+ Oahu Clients Served",
+        image: "hero-military-family.jpg",
+        imageAlt: "Military family receiving Hawaii real estate guidance during a PCS move",
         imageStats: [
           {
-            value: "200+",
-            label: "VA Loans",
+            value: "22",
+            label: "Years Army",
           },
           {
             value: "500+",
-            label: "Families",
+            label: "Families Served",
           },
           {
             value: "20+",
-            label: "Years",
+            label: "Years Oahu",
           },
         ],
-        badgeTitle: "VA Certified",
-        badgeSubtitle: "Specialists",
+        badgeTitle: "Oahu Specialists",
+        badgeSubtitle: "Since 2011",
       },
       trustBar: [
         {
           icon: "shield",
-          value: "200+",
-          label: "VA Loans Closed",
+          value: "1SG",
+          label: "Army Leadership",
         },
         {
           icon: "award",
-          value: "20+",
-          label: "Years in Hawaii",
+          value: "4x",
+          label: "Aloha Aina Award",
         },
         {
           icon: "users",
           value: "500+",
-          label: "Military Families",
+          label: "Oahu Clients Served",
         },
         {
           icon: "home",
-          value: "4.9★",
-          label: "150+ Reviews",
+          value: "VA",
+          label: "Process Guidance",
         },
       ],
+      heritage: {
+        eyebrow: "Local matters",
+        heading: "Oahu Area Intel",
+        text: "Diamond Head, West Oahu, Ewa Beach, Kapolei, Joint Base Pearl Harbor-Hickam, Schofield Barracks, Wheeler Army Airfield, MCBH, Camp Smith, Fort Shafter, Tripler, Barbers Point Coast Guard Station, Kunia Tunnel, NCTAMS, and every commute in between. We help clients understand Oahu before they commit to a home.",
+        image: "diamond-head-neighborhood.jpg",
+        imageAlt: "Diamond Head above an Oahu neighborhood at golden hour",
+      },
       why: {
-        eyebrow: "Why Work With Us",
-        heading: "Experience. Integrity. Aloha.",
+        eyebrow: "Why Oahu Clients Call Us",
+        heading: "Command-Level Clarity for Hawaii Real Estate",
         intro:
-          "Three reasons military families choose us first, and refer us forever.",
+          "The process is direct, responsive, and built for the realities of PCS timelines, VA-financed purchases, renters, property management, and Oahu market pressure.",
         cards: [
           {
-            image: "why-1.jpg",
-            tag: "Local Knowledge",
-            title: "We know every base community",
-            text: "Schofield Barracks, Pearl Harbor, Camp Smith, MCBH and surrounding neighborhoods. We match your family to the right zip code.",
+            image: "hero-military-family.jpg",
+            tag: "Base Intel",
+            title: "Local guidance for Oahu's military communities",
+            text: "Joint Base Pearl Harbor-Hickam, Schofield Barracks, Wheeler Army Airfield, MCBH, Camp Smith, Fort Shafter, Tripler, Barbers Point Coast Guard Station, Kunia Tunnel, NCTAMS, Ewa Beach, Kapolei, and the surrounding neighborhoods. We explain commute, BAH, schools, and tradeoffs plainly.",
             bullets: [
               "School district insights",
-              "Commute & BAH guidance",
-              "Off-market opportunities",
+              "Commute and BAH guidance",
+              "West Oahu market context",
             ],
           },
           {
-            image: "why-2.jpg",
-            tag: "Stress-Free PCS",
-            title: "Buy or sell from anywhere in the world",
-            text: "Virtual tours, digital paperwork and a dedicated relocation coordinator. Mission ready from day one.",
+            image: "hero-pcs-planning.jpg",
+            tag: "PCS Ready",
+            title: "Buy, sell, rent, or manage from anywhere",
+            text: "Video walkthroughs, remote paperwork, clear timelines, and practical decisions for clients moving on orders, changing duty stations, or preparing an Oahu property.",
             bullets: [
               "Live video walkthroughs",
               "Remote digital closings",
@@ -203,122 +210,124 @@ const CONTENT = {
             ],
           },
           {
-            image: "why-3.jpg",
-            tag: "VA Loan Experts",
-            title: "Maximize every benefit you've earned",
-            text: "Over 200 VA loans closed. We explain eligibility, funding fees and how to win in Hawaii's competitive market.",
+            image: "service-property-management.jpg",
+            tag: "VA Process",
+            title: "Understand the VA process before you write",
+            text: "We understand the VA-financed purchase process, explain the real estate side clearly, and coordinate with a trusted VA Loan Officer when financing guidance is needed.",
             bullets: [
-              "Zero down strategies",
-              "Funding fee waivers",
-              "Trusted VA lender network",
+              "Trusted VA Loan Officer coordination",
+              "VA appraisal and timeline awareness",
+              "Offer strategy for VA-financed buyers",
             ],
           },
         ],
       },
       process: {
-        eyebrow: "How It Works",
-        heading: "A simple, three-step process",
+        eyebrow: "The Mission Plan",
+        heading: "Three direct steps from orders to keys",
         steps: [
           {
             number: "01",
-            title: "Consult",
-            text: "Share your timeline, budget, and wishlist. We explain the Hawaii market in plain English.",
+            title: "Brief",
+            text: "Share orders, timeline, BAH, family needs, rental needs, and risk tolerance. We give you the straight Oahu market picture.",
           },
           {
             number: "02",
-            title: "Search & Sell",
-            text: "We find off-market homes or list yours with military-focused marketing.",
+            title: "Execute",
+            text: "We run showings, video tours, listing strategy, negotiations, inspections, and coordinate with VA Loan Officers to meet your timeline.",
           },
           {
             number: "03",
-            title: "Close",
-            text: "Remote or in person. We handle inspections, negotiations, and paperwork end to end.",
+            title: "Secure",
+            text: "Remote or in person, we keep escrow, documents, keys, tenants, or sale proceeds moving without guesswork.",
           },
         ],
       },
       testimonials: {
-        eyebrow: "What Our Clients Say",
-        heading: "Trusted by 500+ military families",
+        eyebrow: "After-Action Reports",
+        heading: "Trusted by Oahu military families and service-minded clients",
       },
     },
     services: {
       path: "services.html",
-      title: "Services for Military Families | Hawaii Real Estate",
+      title: "Oahu Real Estate Services | Hawaii Military Realty",
       description:
-        "VA loans, PCS relocation, property management, and remote selling. Serving Oahu, Maui, Kauai & Big Island.",
+        "Buying, selling, renting, PCS relocation, property management, and VA process coordination for Oahu clients.",
       hero: {
-        image: "hero-bg-services.jpg",
-        eyebrow: "Our Services",
-        heading: "Helping military families buy, sell & manage Hawaii property",
+        image: "hero-pcs-planning.jpg",
+        eyebrow: "Mission Services",
+        heading: "Buy, sell, rent, relocate, and manage Oahu property with veteran-first guidance",
         intro:
-          "Honest, experienced, and personal service tailored to the unique needs of active duty, veterans, and their families.",
+          "Clear strategy for active duty, veterans, reservists, government civilians, government contractors, renters, property owners, and clients who value excellent service, communication, and honesty.",
       },
       cards: [
         {
-          image: "service-buying.jpg",
+          image: "hero-military-family.jpg",
           tag: "Buy",
-          title: "Buying a Home",
+          title: "Buying with VA Process Confidence",
           bullets: [
-            "Personalized neighborhood tours (or live video walkthroughs)",
-            "Full VA loan guidance · pre-approval to closing",
+            "Base-aware neighborhood guidance and live video walkthroughs",
+            "VA process guidance and coordination with trusted VA Loan Officers",
             "PCS timeline coordination aligned with your orders",
-            "Negotiation and closing support · we fight for your best terms",
+            "Offer strategy, negotiation, and closing support",
           ],
         },
         {
-          image: "service-selling.jpg",
+          image: "cta-veteran-service.jpg",
           tag: "Sell",
-          title: "Selling a Home",
+          title: "Selling on a Military Timeline",
           bullets: [
-            "Military-focused marketing · reach incoming PCS families",
-            "Professional staging, photography, and 3D tours",
+            "Military-focused marketing for incoming PCS families",
+            "Professional indoor photography",
+            "Professional outdoor photography",
+            "Aerial/drone photography",
             "Outreach to military relocation and housing offices",
-            "Seamless remote closing · you can be anywhere in the world",
+            "Remote closing support if you have already left island",
           ],
         },
         {
-          image: "service-management.jpg",
+          image: "service-property-management.jpg",
           tag: "Manage",
-          title: "Property Management",
+          title: "Property Management After PCS",
           bullets: [
-            "Tenant placement · we screen for military-friendly renters",
-            "24/7 maintenance hotline · no after-hours worries",
+            "Tenant placement and screening highly qualified renters",
+            "Maintenance coordination while you are off island",
             "Lease management and on-time rent collection",
-            "Peace of mind for deployed owners · we handle everything",
+            "Owner communication built for deployment and PCS distance",
           ],
         },
       ],
       process: {
-        eyebrow: "Our Process",
-        heading: "Four clear steps to keys in hand",
+        eyebrow: "Operational Process",
+        heading: "Four clear steps with no guesswork",
         steps: [
           {
             icon: "msg",
-            title: "1. Consult",
-            text: "We listen to your goals, timeline, and budget.",
+            title: "1. Brief",
+            text: "We confirm orders, goals, timeline, and financial position.",
           },
           {
             icon: "search",
             title: "2. Plan",
-            text: "Custom strategy for buying or selling in Hawaii's market.",
+            text: "We build the buy, sell, or management plan around your mission.",
           },
           {
             icon: "hand",
             title: "3. Execute",
-            text: "Showings, offers, inspections · we manage every detail.",
+            text: "Showings, offers, inspections, tenants, and documents stay on track.",
           },
           {
             icon: "key",
-            title: "4. Close",
-            text: "We guide you through documents, escrow, and keys.",
+            title: "4. Secure",
+            text: "We guide escrow, keys, property handoff, or management setup.",
           },
         ],
       },
       cta: {
-        title: "Ready to Get Started?",
+        title: "Ready for a Straight Assessment?",
         subtitle:
-          "Call us to schedule your free consultation · Oahu, Maui, Kauai, and the Big Island.",
-        note: "No pressure, just honest advice.",
+          "Call us to review orders, timing, rental needs, VA process questions, and your Oahu real estate options.",
+        note: "Direct advice. No pressure. No sales theater.",
       },
     },
     testimonials: {
@@ -327,11 +336,11 @@ const CONTENT = {
       description:
         "Real reviews from military families who bought or sold Hawaii homes with us.",
       hero: {
-        image: "hero-bg-testimonials.jpg",
-        eyebrow: "Testimonials",
-        heading: "Real stories from real military families",
+        image: "cta-veteran-service.jpg",
+        eyebrow: "After-Action Reports",
+        heading: "Real results from military families",
         intro:
-          "We're proud to have helped military families buy and sell homes across Hawaii. Here's what they have to say.",
+          "Client feedback from service members, veterans, retirees, and families who trusted Hawaii Military Realty through major moves.",
       },
       stats: [
         {
@@ -352,12 +361,12 @@ const CONTENT = {
         },
       ],
       cta: {
-        title: "Ready to Work Together?",
-        subtitle: "Let's talk about your real estate goals.",
+        title: "Ready for Veteran-First Guidance?",
+        subtitle: "Let's review your mission, timeline, and next move.",
         note: "Call (808) 123-4567 today.",
       },
       longForm: {
-        eyebrow: "Long-Form Testimonials",
+        eyebrow: "Detailed Reports",
         heading: "Detailed client experiences",
         intro:
           "Read full stories from military families, buyers, sellers, and property owners who trusted Hawaii Military Realty through major real estate decisions.",
@@ -524,21 +533,21 @@ const CONTENT = {
     },
     contact: {
       path: "contact.html",
-      title: "Contact Us – Hawaii Military Real Estate",
+      title: "Contact Us | Hawaii Military Realty",
       description:
         "Call (808) 123-4567, email info@yourcompany.com, or text us anytime.",
       hero: {
-        image: "hero-bg-contact.jpg",
-        eyebrow: "Contact Us",
-        heading: "We're ready to help you home",
+        image: "hero-pcs-planning.jpg",
+        eyebrow: "Direct Contact",
+        heading: "Get clear answers before you move",
         intro:
-          "Have a question or ready to talk about buying or selling a home in Hawaii? We're here for you · 7 days a week.",
+          "PCS timeline, VA questions, selling from off island, or property management after orders. Call, text, or email for a straight assessment.",
       },
       section: {
-        eyebrow: "Get in touch",
-        heading: "Pick the way that works best for you",
+        eyebrow: "No Intake Maze",
+        heading: "Talk to a real person",
         intro:
-          "No forms. No waiting. Real people, real answers · usually within the hour.",
+          "No forms. No waiting. Direct communication with people who understand military timelines and Hawaii real estate.",
       },
       methods: [
         {
@@ -546,7 +555,7 @@ const CONTENT = {
           tone: "pri",
           label: "Call / Text",
           value: "(808) 123-4567",
-          note: "We're always happy to talk · 7 days a week.",
+          note: "The fastest way to get a direct answer.",
           hrefKey: "phoneHref",
         },
         {
@@ -554,7 +563,7 @@ const CONTENT = {
           tone: "acc",
           label: "Email",
           value: "info@yourcompany.com",
-          note: "We'll get back to you within 2 hours.",
+          note: "Useful for orders, timelines, and property details.",
           hrefKey: "email",
         },
         {
@@ -562,7 +571,7 @@ const CONTENT = {
           tone: "palm",
           label: "SMS",
           value: "Text us now",
-          note: "Quick questions welcome.",
+          note: "Quick questions and scheduling updates welcome.",
           hrefKey: "smsHref",
         },
       ],
@@ -572,47 +581,47 @@ const CONTENT = {
           tone: "deep",
           label: "Service Area",
           title: "Based on Oahu",
-          text: "Serving Maui, Kauai, and the Big Island.",
+          text: "Serving Oahu buyers, sellers, renters, property owners, military families, and service-minded clients.",
         },
         {
           icon: "clock",
           tone: "pri",
           label: "Hours",
-          title: "7 Days · 8am–8pm HST",
-          text: "Deployment-friendly · we work around your timezone.",
+          title: "7 Days | 8am-8pm HST",
+          text: "Deployment-friendly communication across time zones.",
         },
         {
           icon: "calendar",
           tone: "acc",
-          label: "Free Consultation",
+          label: "Mission Brief",
           title: "15-minute call",
-          text: "No pressure · just honest advice.",
+          text: "No pressure. Just facts, risk, timing, and next steps.",
         },
       ],
       cta: {
-        title: "Let's Talk About Your Goals",
+        title: "Start With a Clear Brief",
         subtitle:
-          "Buying, selling, or just have questions? Call or text anytime.",
-        note: "(808) 123-4567 · 7 days a week.",
+          "Buying, selling, relocating, or managing property from afar? Call or text anytime.",
+        note: "(808) 123-4567 | 7 days a week.",
       },
     },
     featuredListing: {
       path: "featured-listing.html",
-      title: "123 Aloha Drive Kapolei – Military Family Home Near JBPHH",
+      title: "VA-Ready Kapolei Home Near JBPHH | Hawaii Military Realty",
       description:
         "Turnkey 4-bed, 3-bath home minutes from JBPHH. VA loan eligible, solar, AC, and fenced yard.",
       canonical: "/featured-listing.html",
-      ogTitle: "Featured Listing · 123 Aloha Drive, Kapolei",
-      ogDescription: "Military family dream home · VA eligible, move-in ready.",
+      ogTitle: "Featured Listing | Kapolei Home Near JBPHH",
+      ogDescription: "VA-ready Kapolei home with practical access to JBPHH.",
       ogImage: "assets/featured-home.jpg",
       hero: {
         image: "featured-home.jpg",
         imageAlt: "123 Aloha Drive Kapolei exterior",
         eyebrow: "Featured Property",
-        heading: "Military Family Dream Home in Kapolei",
+        heading: "VA-Ready Kapolei Home Near JBPHH",
         address: "123 Aloha Drive, Kapolei, HI 96707",
         price: "$785,000",
-        valueNote: "VA Eligible · $0 Down for qualified veterans",
+        valueNote: "VA Eligible | $0 Down for qualified veterans",
       },
       specs: [
         {
@@ -632,21 +641,21 @@ const CONTENT = {
         },
       ],
       overview: {
-        eyebrow: "About this home",
+        eyebrow: "Property Brief",
         heading: "A move-in ready home minutes from JBPHH",
         paragraphs: [
           "Just minutes from Joint Base Pearl Harbor-Hickam, this turnkey home features owned solar panels, a two-car garage, and a fenced backyard perfect for keiki (children) and pets. Recently updated kitchen and AC throughout.",
-          "VA loan eligible · no down payment for qualified veterans. Lot size: 7,500 Sq Ft. Quiet, family-friendly street with easy access to H-1 and top-rated schools.",
+          "VA loan eligible with no down payment for qualified veterans. Lot size: 7,500 Sq Ft. Quiet, family-friendly street with easy access to H-1, schools, commissary, and exchange.",
         ],
       },
       highlightsHeading: "Highlights",
       highlights: [
         "Near schools, commissary, and exchange",
-        "Move-in ready · new paint and flooring",
+        "Move-in ready with new paint and flooring",
         "Low HOA fee ($45/month)",
         "5-year-old roof and owned solar",
-        "Fenced backyard · keiki and pets welcome",
-        "Two-car garage · plenty of storage",
+        "Fenced backyard for keiki and pets",
+        "Two-car garage with practical storage",
       ],
       detailsHeading: "Property details",
       details: [
@@ -677,9 +686,9 @@ const CONTENT = {
       ],
       tour: {
         eyebrow: "Schedule a Tour",
-        heading: "See it in person",
+        heading: "Get eyes on the property",
         intro:
-          "Private tours available 7 days a week · in-person or live video walkthrough.",
+          "Private tours available 7 days a week, in person or by live video walkthrough.",
         reply: "Typical reply in under 2 hours.",
         options: [
           {
@@ -706,15 +715,15 @@ const CONTENT = {
         ],
       },
       cta: {
-        title: "Interested in this home?",
+        title: "Need a VA-Ready Home Search?",
         subtitle:
-          "Or want to see similar properties · VA eligible across Oahu.",
+          "Ask about this home or similar properties near Oahu's military communities.",
         note: "Call or text for a private tour.",
       },
     },
     notFound: {
       path: "404.html",
-      title: "Page Not Found · Hawaii Military Real Estate",
+      title: "Page Not Found | Hawaii Military Realty",
       robots: "noindex",
       heading: "404",
       subheading: "Page not found",
@@ -723,40 +732,45 @@ const CONTENT = {
     },
   },
   team: {
-    title: "Meet the Team | Hawaii Military Real Estate",
+    title: "Meet the Team | Hawaii Military Realty",
     description:
-      "Meet Cameron Kucic, Ashley Payne, Brandie Martin, Jim Pickens, and David J. Kucic, real estate professionals serving military families across Oahu.",
-    eyebrow: "Our Team",
-    heading: "Experienced Guidance for Your Next Move",
+      "Meet David J. Kucic, Cameron Kucic, Ashley Payne, Brandie Martin, Jim Pickens, Tonya Kucic, Jeff R. Loyd, and Tami Sego, real estate professionals serving clients across Oahu.",
+    eyebrow: "The Team",
+    heading: "Military-informed guidance, broker-level standards",
     cta: {
-      title: "Ready to Work With Us?",
-      subtitle: "Call or text to start planning your next real estate move.",
-      note: "Serving buyers, sellers, military families, and property investors across Oahu.",
+      title: "Ready for a Clear Plan?",
+      subtitle: "Call or text to brief us on your next Hawaii real estate move.",
+      note: "Serving buyers, sellers, renters, military families, property owners, and property investors across Oahu.",
     },
     intro: [
-      "Cameron Kucic, Ashley Payne, Brandie Martin, Jim Pickens, and David J. Kucic serve buyers, sellers, military families, homeowners, and investors with steady communication, practical market guidance, and client-first advocacy.",
+      "David J. Kucic, Cameron Kucic, Ashley Payne, Brandie Martin, Jim Pickens, Tonya Kucic, Jeff R. Loyd, and Tami Sego serve buyers, sellers, renters, military families, homeowners, government civilians, government contractors, and investors with steady communication, practical Oahu market guidance, and disciplined client advocacy.",
     ],
   },
   about: {
-    title: "About Hawaii Military Real Estate",
+    title: "About Hawaii Military Realty",
     description:
-      "Learn about Hawaii Military Real Estate's disciplined Oahu real estate guidance, broker expertise, and service-first approach.",
-    eyebrow: "About Us",
-    heading: "Disciplined Real Estate Guidance for Oahu",
-    featuredEyebrow: "Featured Agent",
+      "Learn about Hawaii Military Realty's disciplined Oahu real estate guidance, broker expertise, and veteran-first service approach.",
+    eyebrow: "About Hawaii Military Realty",
+    heading: "Native Hawaiian owned. Veteran owned and managed.",
+    featuredEyebrow: "First Sergeant Leadership",
     featuredCtaLabel: "Read Full Bio",
-    backgroundEyebrow: "Background",
-    backgroundHeading: "Broker expertise shaped by service",
+    backgroundEyebrow: "Operating Standards",
+    backgroundHeading: "Broker expertise shaped by military service",
     cards: [
       {
         icon: "shieldCheck",
-        title: "Military Leadership",
-        text: "Our team brings firsthand military experience and mission-focused execution to each client relationship.",
+        title: "Veteran Owned & Managed Brokerage",
+        text: "The brokerage is managed with firsthand military experience, mission-focused execution, and direct accountability.",
+      },
+      {
+        icon: "heart",
+        title: "Native Hawaiian Owned",
+        text: "Local ownership anchors the brokerage in Oahu communities, relationships, and island responsibility.",
       },
       {
         icon: "home",
         title: "Oahu Real Estate",
-        text: "We guide buyers, sellers, families, and investors through the island's unique real estate market.",
+        text: "We guide buyers, sellers, renters, families, and investors through Oahu's base communities and neighborhood tradeoffs.",
       },
       {
         icon: "award",
@@ -765,17 +779,17 @@ const CONTENT = {
       },
       {
         icon: "heart",
-        title: "Island Lifestyle",
-        text: "We understand the lifestyle, community, and long-term stability that make Oahu home.",
+        title: "Hawaii Roots",
+        text: "We understand the local communities, traffic realities, climate, schools, and long-term stability that matter here.",
       },
     ],
     cta: {
-      title: "Let's Work Together",
-      subtitle: "Call or text us today to start the conversation.",
-      note: "Available for buying, selling, relocation, and property management planning.",
+      title: "Brief Us on the Mission",
+      subtitle: "Call or text us today to get direct guidance before you move.",
+      note: "Available for buying, selling, renting, relocation, and property management planning.",
     },
     intro: [
-      "Hawaii Military Real Estate combines deep island market experience, broker-level operational standards, and military-informed leadership to support buyers, sellers, property owners, and service families.",
+      "Hawaii Military Realty combines deep Oahu market experience, broker-level operational standards, Native Hawaiian ownership, and veteran-owned management to support buyers, sellers, renters, property owners, and service families.",
     ],
   },
   agents: [
@@ -832,7 +846,7 @@ const CONTENT = {
         {
           title: "Real Estate Leadership",
           pills: [
-            "VA Loan Benefits",
+            "VA Process Guidance",
             "Relocation Services",
             "Home Buying",
             "Home Selling",
@@ -851,7 +865,7 @@ const CONTENT = {
       },
       about: [
         "David J. Kucic is an American real estate professional, military veteran, and community leader best known as the founder and president of Hawaii Military Realty, Inc., a company dedicated to serving military members, veterans, and their families with real estate needs across Oahu. Based in Ewa Beach, Hawaii, Kucic built his business alongside his wife, creating a team-oriented organization rooted in trust, integrity, and firsthand military experience.",
-        "His company specializes in relocation services, home buying and selling, and navigating VA home loan benefits, reflecting his commitment to supporting those who have served.",
+        "His company specializes in relocation, renters, home buying and selling, property management, and helping clients understand the real estate side of the VA purchase process while coordinating with trusted lending professionals when financing questions need a licensed loan expert.",
       ],
       featuredAbout: [],
     },
@@ -909,9 +923,9 @@ const CONTENT = {
           ],
         },
         {
-          title: "Island Life",
+          title: "Local Hawaii Roots",
           paragraphs: [
-            "When he is out of uniform and away from the closing table, Cameron fully embraces the lifestyle that makes living on Oahu so remarkable. An avid golfer with a single-digit handicap, he can frequently be found navigating the island's premier courses. True to the island spirit, he is equally passionate about spending time in the ocean, whether he is out fishing, freediving, or exploring the Pacific waters.",
+            "When he is out of uniform and away from the closing table, Cameron stays deeply connected to Oahu's communities, neighborhoods, and day-to-day realities. That local perspective helps clients understand more than a listing sheet: commute pressure, heat, schools, upkeep, and what long-term stability looks like on island.",
           ],
         },
         {
@@ -946,14 +960,14 @@ const CONTENT = {
       name: "Ashley Payne",
       shortName: "Ashley",
       image: "ashley.jpg",
-      title: "Ashley Payne - Real Estate Agent / Military Family Advocate",
+      title: "Ashley Payne - Realtor / Property Management Advisor",
       description:
-        "Meet Ashley Payne, a real estate agent helping families, military families, buyers, and sellers find the right home and next chapter.",
-      roleTag: "Real Estate Agent",
-      cardRole: "Real Estate Agent / Family Relocation Advisor",
-      cardMeta: "Military family advocate",
+        "Meet Ashley Payne, a Realtor and Property Management Advisor helping families, military families, buyers, sellers, renters, and property owners across Oahu.",
+      roleTag: "Realtor / Property Management Advisor",
+      cardRole: "Realtor / Property Management Advisor",
+      cardMeta: "Property management advisor",
       tagline:
-        "Helping families feel supported, informed, and confident through every real estate decision.",
+        "Helping families, renters, and property owners feel supported, informed, and confident through every real estate decision.",
       aboutTitle: "About Ashley",
       badges: [
         {
@@ -982,7 +996,7 @@ const CONTENT = {
           title: "My Approach",
           paragraphs: [
             "My approach to real estate is built on hard work, attention to detail, and treating every transaction as if it were my own. Whether helping first-time buyers, growing families, military families, or sellers preparing for their next chapter, I focus on creating a smooth and personalized experience from start to finish.",
-            "I believe clients deserve an agent who listens closely, advocates strongly, and stays present every step of the way. Real estate, for me, has always been about people first. I believe a home is more than just a property - it's where families grow, milestones happen, and memories are created. That's why I approach every client relationship with honesty, communication, and a genuine commitment to helping people make confident decisions that support their goals and lifestyle.",
+            "I believe clients deserve an agent who listens closely, advocates strongly, and stays present every step of the way. Real estate, for me, has always been about people first. I believe a home is more than just a property - it's where families grow, milestones happen, and memories are created. That's why I approach every client relationship with honesty, communication, and a genuine commitment to helping people make confident decisions that support their goals.",
           ],
         },
         {
@@ -995,7 +1009,7 @@ const CONTENT = {
           ],
           paragraphs: [
             "I got into real estate because I love helping people build a future. Homeownership can create stability, opportunity, and generational wealth, and being part of that journey is something I never take lightly. I'm passionate about helping clients not only find the right home, but also feel supported, informed, and cared for throughout the process.",
-            "Outside of real estate, I value family, church, community, health, and living an active lifestyle - all of which shape the way I connect with clients and serve others. My goal is always to build lasting relationships, not just close transactions.",
+            "Outside of real estate, I value family, church, community, health, and steady service - all of which shape the way I connect with clients and serve others. My goal is always to build lasting relationships, not just close transactions.",
           ],
         },
       ],
@@ -1051,13 +1065,13 @@ const CONTENT = {
         {
           title: "Military Relocation",
           paragraphs: [
-            "As a Military Relocation Professional (MRP), Brandie is specially trained to serve active-duty service members, veterans, and military families - from maximizing VA loan benefits to managing the tight timelines that come with PCS orders. Having lived that life firsthand, she knows what's at stake and is committed to making every transition as smooth as possible.",
+            "As a Military Relocation Professional (MRP), Brandie is specially trained to serve active-duty service members, veterans, and military families - from understanding the real estate side of VA-financed purchases to managing the tight timelines that come with PCS orders. Having lived that life firsthand, she knows what's at stake and is committed to making every transition as smooth as possible.",
           ],
         },
         {
           title: "Professional Memberships",
           pills: [
-            "VA Loan Guidance",
+            "VA Process Guidance",
             "PCS Timelines",
             "Buyers",
             "Sellers",
@@ -1092,7 +1106,7 @@ const CONTENT = {
       cardRole: "Realtor / Property Management Advisor",
       cardMeta: "Marine MSgt · MRP",
       tagline:
-        "Retired Marine Master Sergeant helping buyers, sellers, and property management clients across Hawaii.",
+        "Retired Marine Master Sergeant helping buyers, sellers, and property management clients across Oahu.",
       aboutTitle: "About Jim",
       badges: [
         {
@@ -1145,6 +1159,196 @@ const CONTENT = {
       about: [
         "My name is Jim Pickens, and I am a Realtor with Hawaii Military Realty, Inc., specializing in assisting buyers, sellers, and property management. I served on active duty as a Marine Master Sergeant from 1990 to 2017.",
         "Following my retirement, I obtained my Hawaii Real Estate license in August 2017 and have been assisting clients with sales and purchases ever since. I also expanded into property management in 2018.",
+      ],
+      featuredAbout: [],
+    },
+    {
+      slug: "tonya-kucic",
+      name: "Tonya Kucic",
+      shortName: "Tonya",
+      image: "agent-silhouette.svg",
+      title: "Tonya Kucic - Realtor",
+      description:
+        "Placeholder profile for Tonya Kucic of Hawaii Military Realty.",
+      roleTag: "Realtor",
+      cardRole: "Realtor",
+      cardMeta: "Photo and bio placeholder",
+      tagline:
+        "Placeholder profile reserved for Tonya Kucic's Hawaii Military Realty bio.",
+      aboutTitle: "About Tonya",
+      badges: [
+        {
+          icon: "home",
+          title: "Oahu Real Estate",
+          text: "Full profile details pending",
+        },
+        {
+          icon: "hand",
+          title: "Client Service",
+          text: "Bio placeholder ready for final copy",
+        },
+      ],
+      sections: [
+        {
+          title: "Profile Placeholder",
+          pills: [
+            "Oahu Real Estate",
+            "Client Service",
+            "Hawaii Military Realty",
+          ],
+          paragraphs: [
+            "Tonya Kucic's detailed bio and headshot are being prepared. This page is reserved for her full Hawaii Military Realty profile, including client focus, local experience, and contact details.",
+          ],
+        },
+      ],
+      cta: {
+        title: "Contact the Team",
+        subtitle: "Call or text Hawaii Military Realty for Oahu guidance.",
+        note: "Full Tonya Kucic profile content pending.",
+      },
+      about: [
+        "Tonya Kucic's detailed bio and photo are pending. This placeholder keeps her profile page, team card, and contact path ready for final content.",
+      ],
+      featuredAbout: [],
+    },
+    {
+      slug: "jeff-loyd",
+      name: "Jeff R. Loyd",
+      shortName: "Jeff",
+      image: "agent-silhouette.svg",
+      title: "Jeff R. Loyd - Broker-in-Charge / Property Management Advisor",
+      description:
+        "Meet Sergeant First Class (Retired) Jeff R. Loyd, Broker-in-Charge and Property Management Advisor for Hawaii Military Realty.",
+      roleTag: "Broker-in-Charge",
+      cardRole: "Broker-in-Charge / Property Management Advisor",
+      cardMeta: "SFC (Ret.) | ABR | CRS",
+      tagline:
+        "Sergeant First Class (Retired), Broker-in-Charge, and Property Management Advisor serving Oahu clients with disciplined communication and steady execution.",
+      aboutTitle: "About Jeff",
+      badges: [
+        {
+          icon: "star",
+          title: "Army Veteran",
+          text: "23 years of U.S. Army service, retiring as Sergeant First Class",
+        },
+        {
+          icon: "shieldCheck",
+          title: "Broker-in-Charge",
+          text: "Broker-in-Charge for Hawaii Military Realty, Inc.",
+        },
+        {
+          icon: "home",
+          title: "Property Management",
+          text: "Experienced Buyer's Agent, Seller's Agent, and Property Manager",
+        },
+        {
+          icon: "award",
+          title: "ABR and CRS",
+          text: "Accredited Buyer's Representative and Certified Residential Specialist",
+        },
+      ],
+      sections: [
+        {
+          title: "Military Service",
+          pills: [
+            "Sergeant First Class (Retired)",
+            "Aviation Maintenance",
+            "Senior Enlisted Trainer",
+          ],
+          paragraphs: [
+            "Jeff grew up in the border town of El Paso, Texas. Soon after graduating from high school, he enlisted in the U.S. Army as a helicopter avionics technician.",
+            "Jeff's Army service spanned the globe, with assignments in Korea, Japan, Kuwait, Bosnia, Iraq, and Afghanistan. Across those assignments, he sharpened the managerial skills that now inform his real estate and property management work.",
+            "Throughout his 23-year career, Jeff served in a wide range of positions, including avionics technician, helicopter electrician, squad leader, platoon sergeant, instructor, Division Liaison Officer, and Operations Noncommissioned Officer in Charge (NCOIC) of a forward-deployed brigade in Iraq and Afghanistan. He also served as the Senior Enlisted Trainer to the Afghan Air Force.",
+          ],
+        },
+        {
+          title: "Awards and Education",
+          paragraphs: [
+            "Jeff's military awards and decorations include the Bronze Star Medal, Meritorious Service Medal (2), Army Commendation Medal (2), Army Achievement Medal (13), Air Force Achievement Medal, Good Conduct Medal (7th Knot), National Defense Service Medal with campaign star, Korean Defense Service Medal, Armed Forces Expeditionary Medal with campaign star, Afghanistan Campaign Medal with campaign star, Iraq Campaign Medal with two campaign stars, Global War on Terrorism Service Medal, Armed Forces Service Medal, NATO Medal with campaign star, NCO Professional Development Ribbon (3), Army Service Ribbon, Overseas Service Ribbon (6), Meritorious Unit Citation, Master Air Crewmember Badge, Driver's Badge, and Sharpshooter Marksmanship Badge for M4 and M9.",
+            "His education includes a Bachelor of Science in Occupational Education in Business Management with a minor in Marketing from Wayland Baptist University.",
+          ],
+        },
+        {
+          title: "Real Estate Leadership",
+          pills: [
+            "Broker-in-Charge",
+            "Property Management Advisor",
+            "ABR",
+            "CRS",
+          ],
+          paragraphs: [
+            "After retirement, Jeff pursued his real estate salesperson license and completed all requirements on April 1, 2013.",
+            "In his 12-year career as a Realtor, Jeff has earned the Accredited Buyer's Representative (ABR) designation and Certified Residential Specialist (CRS) designation. He is currently a Broker-in-Charge for Hawaii Military Realty, Inc.",
+            "Jeff has served as a Buyer's Agent, Seller's Agent, and Property Manager, bringing the same operational discipline and direct communication from his military career into each client relationship.",
+          ],
+        },
+        {
+          title: "Family and Interests",
+          paragraphs: [
+            "Jeff is married to his wife, Aiko, and has two children. His oldest son, Nicholas, graduated from Purdue University in 2026, and his youngest son, Colin, is an upcoming senior at Campbell High School.",
+            "Jeff's hobbies include golf, photography, and spending time with his family.",
+          ],
+        },
+      ],
+      cta: {
+        title: "Let's Talk About Your Property Goals",
+        subtitle:
+          "Call or text Jeff for Oahu buying, selling, and property management guidance.",
+        note: "Support for buyers, sellers, property owners, renters, and military families.",
+      },
+      about: [
+        "Sergeant First Class (Retired) Jeff R. Loyd is a Broker-in-Charge and Property Management Advisor for Hawaii Military Realty, Inc.",
+        "After 23 years of U.S. Army service across aviation maintenance, leadership, instruction, and forward-deployed operations, Jeff brings disciplined communication, operational judgment, and client-first execution to Oahu real estate.",
+        "Since completing his real estate salesperson requirements on April 1, 2013, Jeff has built a 12-year real estate career serving as a Buyer's Agent, Seller's Agent, Property Manager, and Broker-in-Charge.",
+      ],
+      featuredAbout: [],
+    },
+    {
+      slug: "tami-sego",
+      name: "Tami Sego",
+      shortName: "Tami",
+      image: "agent-silhouette.svg",
+      title: "Tami Sego - Realtor",
+      description:
+        "Placeholder profile for Tami Sego of Hawaii Military Realty.",
+      roleTag: "Realtor",
+      cardRole: "Realtor",
+      cardMeta: "Photo and bio placeholder",
+      tagline:
+        "Placeholder profile reserved for Tami Sego's Hawaii Military Realty bio.",
+      aboutTitle: "About Tami",
+      badges: [
+        {
+          icon: "home",
+          title: "Oahu Real Estate",
+          text: "Full profile details pending",
+        },
+        {
+          icon: "hand",
+          title: "Client Service",
+          text: "Bio placeholder ready for final copy",
+        },
+      ],
+      sections: [
+        {
+          title: "Profile Placeholder",
+          pills: [
+            "Oahu Real Estate",
+            "Client Service",
+            "Hawaii Military Realty",
+          ],
+          paragraphs: [
+            "Tami Sego's detailed bio and headshot are being prepared. This page is reserved for her full Hawaii Military Realty profile, including client focus, local experience, and contact details.",
+          ],
+        },
+      ],
+      cta: {
+        title: "Contact the Team",
+        subtitle: "Call or text Hawaii Military Realty for Oahu guidance.",
+        note: "Full Tami Sego profile content pending.",
+      },
+      about: [
+        "Tami Sego's detailed bio and photo are pending. This placeholder keeps her profile page, team card, and contact path ready for final content.",
       ],
       featuredAbout: [],
     },

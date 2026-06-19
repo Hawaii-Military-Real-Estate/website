@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Agent photo placeholder</title>
+  <desc id="desc">Neutral unisex silhouette placeholder for an agent profile photo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b0b0b" />
+      <stop offset="0.55" stop-color="#2f3336" />
+      <stop offset="1" stop-color="#56613f" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="32%" r="52%">
+      <stop offset="0" stop-color="#f2c300" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#f2c300" stop-opacity="0" />
+    </radialGradient>
+    <clipPath id="circle">
+      <circle cx="320" cy="320" r="320" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect width="640" height="640" fill="url(#bg)" />
+    <rect width="640" height="640" fill="url(#glow)" />
+    <path d="M-20 176c72-38 128-46 190-20 76 32 128 16 190-18 76-40 150-34 300 24v120c-92-42-158-46-230-8-74 38-138 34-210-4-68-36-130-28-240 24z" fill="#6f5f3f" opacity="0.34" />
+    <path d="M-30 396c96-54 176-58 252-14 76 42 140 42 218 0 84-46 158-42 230 8v156H-30z" fill="#24291d" opacity="0.38" />
+    <circle cx="320" cy="238" r="96" fill="#d8c6a1" opacity="0.88" />
+    <path d="M164 562c16-132 82-204 156-204s140 72 156 204z" fill="#d8c6a1" opacity="0.88" />
+    <path d="M188 562c18-104 68-158 132-158s114 54 132 158z" fill="#0b0b0b" opacity="0.2" />
+    <circle cx="320" cy="320" r="296" fill="none" stroke="#f2c300" stroke-width="18" opacity="0.82" />
+  </g>
+</svg>

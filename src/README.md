@@ -1,4 +1,4 @@
-# Hawaii Military Real Estate — Static Site
+# Hawaii Military Realty — Static Site
 
 Mostly hand-coded CSS, JS, assets, plain-text content, and build templates. All public HTML pages are generated into `../build/` before publishing so copy stays DRY and page rendering does minimal browser-side work.
 
@@ -39,7 +39,6 @@ The About page's featured profile comes from the agent with `featured: true`.
 robots.txt
 content.js
 assets/
-  css/styles.css
   *.jpg
 css/styles.css
 js/site.js
@@ -64,7 +63,7 @@ Open **`templates/`** to change page structure, classes, layout, or repeated mar
 
 ## Editing colors / design tokens
 
-Open **`assets/css/styles.css`** or **`css/styles.css`** — `:root` block at the top. Change the hex values for `--primary`, `--accent`, `--ocean-deep`, etc., and the related generated pages update after rebuild.
+Open **`css/styles.css`** — `:root` block at the top. The active palette is Command Gold, Tactical Black, Mission Gray, Military Olive, Warm Sand, and Light Khaki.
 
 ## Performance
 

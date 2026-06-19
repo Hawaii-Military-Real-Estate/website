@@ -5,14 +5,18 @@ cd "$(git rev-parse --show-toplevel)"
 
 node scripts/build-content.js
 
+host="${PREVIEW_HOST:-0.0.0.0}"
 port="$(
-  python3 - <<'PY'
+  PREVIEW_HOST="$host" python3 - <<'PY'
+import os
 import socket
+
+host = os.environ.get("PREVIEW_HOST", "0.0.0.0")
 
 for port in range(8080, 8181):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         try:
-            sock.bind(("127.0.0.1", port))
+            sock.bind((host, port))
         except OSError:
             continue
         print(port)
@@ -22,5 +26,6 @@ else:
 PY
 )"
 
-echo "Serving build/ at http://localhost:${port}"
-exec python3 -m http.server "$port" --bind 127.0.0.1 --directory build
+echo "Serving build/ at http://${host}:${port}"
+echo "Local URL: http://localhost:${port}"
+exec python3 -m http.server "$port" --bind "$host" --directory build

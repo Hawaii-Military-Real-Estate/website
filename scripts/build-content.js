@@ -575,6 +575,11 @@ function renderTeamCard(agent) {
     ...agent,
     prefix: "",
     profileHref: "agents/" + agent.slug + ".html",
+    phoneHref: content.site.contact.phoneHref,
+    phoneDisplay: content.site.contact.phoneDisplay,
+    email: content.site.contact.email,
+    phoneIcon: icon("phone"),
+    mailIcon: icon("mail"),
     sortAttribute:
       typeof agent.sort === "number"
         ? ' data-sort="' + escapeHtml(agent.sort) + '"'

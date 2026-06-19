@@ -1,30 +1,48 @@
 # Design and Brand Specifications
 
-The brand identity for Hawaii Military Realty, Inc- is built upon the foundation of "Veterans Serving Veterans," leveraging the discipline of a 22-year military career to provide precision in the complex Hawaii real estate market
+The brand identity for Hawaii Military Realty, Inc. is built on Native Hawaiian ownership, veteran-owned management, and disciplined Oahu real estate guidance shaped by David Kucic's 22-year military career.
 
-The brand positions itself not as a traditional sales firm, but as a specialized boutique brokerage of "TRUE Military Experts"
+The brand positions itself not as a luxury Hawaii brokerage, but as Oahu's military real estate command post: direct, dependable, locally grounded, and service-first.
 
 ## Core Brand Phrases
 
-- "Failure is not an option": This is the brand's cornerstone ethos, derived from David Kucic’s military leadership as a First Sergeant
-- "TRUE Military Experts": Emphasizes the team’s firsthand experience as retirees, active members, and military spouses
-- "Your Hawaii Real Estate Solution": Positions the firm as a comprehensive resource for relocation, buying, and property management
-- "Specializing in those who have worn the uniform": Clearly defines the target demographic: Active duty, National Guard, Reservists, retirees, and veterans
+- "Hawaii's #1 Military Real Estate Specialists Since 2011": Primary homepage positioning.
+- "Oahu Only": Clarifies geographic focus and avoids neighbor-island overreach.
+- "Native Hawaiian Owned": Establishes local credibility and community roots.
+- "Veteran Owned & Managed Real Estate Brokerage": Defines operating authority and military credibility.
+- "Failure is not an option": Cornerstone ethos derived from David Kucic's First Sergeant leadership.
+- Audience: active duty, veterans, reservists, government civilians, government contractors, renters, property owners, and anyone seeking excellent service, communication, and honesty.
 
 ## Color Palette and Visual Identity
 
-The visual branding should integrate Hawaiian and military themes:
+The refreshed visual system leads with camouflage-logo heritage, military credibility, and Oahu context.
 
-- Primary Colors: the "sunny southwest coast" of Oahu— Ocean Blue, Turquoise, and Sand/Tan
-- Secondary Colors: military-inspired tones— Olive Drab, Coyote Tan, or Gold/Bronze—to mirror the "Bronze Star" and "First Sergeant" heritage
-- Imagery: high-quality visuals of Ewa Beach landscapes, golf courses (Hoakalei/Hawaii Prince), and tropical palm-fringed vistas
-- Iconography: The use of the 1SG (First Sergeant) chevron and professional headshots of the husband-and-wife "Team Kucic" are central to establishing immediate trust and credibility
+- Primary colors: Command Gold `#F2C300`, Tactical Black `#0B0B0B`, Mission Gray `#2F3336`, Warm Sand `#D8C6A1`
+- Supporting colors: Field Olive `#6B7551`, Camo Olive `#56613F`, Camo Brown `#6F5F3F`, Light Khaki `#E7DFC4`
+- Imagery: real agent photos, military families, PCS relocation, Diamond Head, Ewa Beach, West Oahu neighborhoods, and restrained local Oahu context
+- Avoid: luxury mansion imagery, turquoise ocean-forward heroes, bright tropical lifestyle framing, and generic tech/corporate visuals
+- Iconography: subtle chevron-inspired details, veteran-owned callouts, service badges, and First Sergeant heritage without weapons or combat imagery
 
 ## Brand Best Practices
 
-- Extreme Responsiveness: A hallmark of the brand is communication that is "never delayed-" Best practices include responding to inquiries within minutes or hours, rather than days
-- Educational Advocacy: Rather than "selling," the brand focuses on educating clients on the technicalities of the VA Home Loan Guaranty Program and Basic Allowance for Housing (BAH)
-- The "Full-Lifecycle" Model: The brand should be marketed as a "one-stop shop" that handles the initial purchase, transitions to property management when the member PCSs (moves), and handles the final sale
-- Digital Excellence: Because many military buyers are remote, the brand must prioritize high-quality video tours, digital floor plans, and online portals for all transactions and property management tasks
-- Transparency and Integrity: Maintain an "unvarnished" view of the market, including being honest about challenges like H-1 freeway traffic and the Leeward coast's intense heat
-- Ethics-First Approach: Leverage the Aloha Aina Realtors Awards (won four times) as proof of a service-first model that prioritizes the client's interests over commission
+- Extreme Responsiveness: Communication should be direct, fast, and specific.
+- VA Process Clarity: The brokerage does not provide VA loans. It understands the real estate side of VA-financed purchases and coordinates with a trusted VA Loan Officer when financing guidance is needed.
+- Full Lifecycle Model: Support buying, selling, renting, tenant placement, property management after PCS, and final sale planning for Oahu clients.
+- Digital Excellence: Remote clients need high-quality video tours, professional indoor photography, professional outdoor photography, aerial/drone photography, and online portals for transactions and property management tasks.
+- Transparency and Integrity: Maintain an unvarnished view of Oahu market realities, including H-1 traffic, Leeward heat, commute tradeoffs, schools, and BAH pressure.
+- Ethics-First Approach: Leverage the Aloha Aina Realtors Awards as proof of a service-first model that prioritizes the client's interests over commission.
+
+## Oahu Military Installation References
+
+Use Oahu installation language precisely. Include Joint Base Pearl Harbor-Hickam as the combined installation name; do not use a standalone Pearl Harbor reference in new marketing copy.
+
+- Joint Base Pearl Harbor-Hickam
+- Schofield Barracks
+- Wheeler Army Airfield
+- Marine Corps Base Hawaii / MCBH
+- Camp Smith
+- Fort Shafter
+- Tripler
+- Barbers Point Coast Guard Station
+- Kunia Tunnel
+- NCTAMS

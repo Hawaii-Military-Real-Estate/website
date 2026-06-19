@@ -1,4 +1,4 @@
-# Hawaii Military Realty, Inc
+# Hawaii Military Realty, Inc.
 
 Static site for Hawaii Military Realty.
 

@@ -14,7 +14,7 @@
             alt="" /><img src="assets/avatar-4.jpg" alt="" /><span>{{hero.avatarCount}}</span>
         </div>
         <div>
-          <div class="stars">{{{starsHtml}}}<strong style="color: var(--fg); margin-left: 6px">{{hero.rating}}</strong>
+          <div class="stars">{{{starsHtml}}}<strong style="color: #fff; margin-left: 6px">{{hero.rating}}</strong>
           </div>
           <div style="font-size: 0.72rem; color: var(--muted-fg); margin-top: 2px;">{{hero.ratingLabel}}</div>
         </div>
@@ -25,7 +25,7 @@
         <div class="hero-img">
           <img src="assets/{{hero.image}}" alt="{{hero.imageAlt}}" />
           <div
-            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(28, 58, 99, 0.7), transparent);">
+            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11, 11, 11, 0.82), transparent);">
           </div>
           <div class="glass">{{{heroStatsHtml}}}</div>
         </div>
@@ -47,6 +47,19 @@
   </div>
 </section>
 
+<section class="heritage-band">
+  <div class="container heritage-grid">
+    <div class="heritage-copy reveal">
+      <div class="eyebrow-mini">{{heritage.eyebrow}}</div>
+      <h2>{{heritage.heading}}</h2>
+      <p>{{heritage.text}}</p>
+    </div>
+    <div class="heritage-photo reveal">
+      <img src="assets/{{heritage.image}}" alt="{{heritage.imageAlt}}" loading="lazy" />
+    </div>
+  </div>
+</section>
+
 <section class="section alt">
   <div class="container">
     <div class="section-head reveal">
@@ -62,7 +75,7 @@
   <div class="container">
     <div class="reveal" style="max-width: 42rem">
       <div class="eyebrow-mini"
-        style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--primary);">
+        style="font-size: 0.72rem; letter-spacing: 0; text-transform: uppercase; font-weight: 600; color: var(--primary);">
         {{process.eyebrow}}</div>
       <h2 style="margin-top: 0.7rem; font-size: clamp(1.6rem, 3vw, 2.25rem)">{{process.heading}}</h2>
     </div>
