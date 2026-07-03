@@ -47,13 +47,13 @@ const CONTENT = {
     ],
     social: [
       {
-        label: "Instagram",
-        href: "#",
-        icon: "instagram",
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/david-kucic-7948236/",
+        icon: "linkedin",
       },
       {
         label: "Facebook",
-        href: "#",
+        href: "https://www.facebook.com/HawaiiMilitaryRealty/",
         icon: "facebook",
       },
     ],
