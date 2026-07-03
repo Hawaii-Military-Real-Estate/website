@@ -302,7 +302,7 @@ const CONTENT = {
       ],
       process: {
         eyebrow: "Operational Process",
-        heading: "Four clear steps with no guesswork",
+        heading: "Three clear steps with no guesswork",
         steps: [
           {
             icon: "msg",
@@ -310,18 +310,13 @@ const CONTENT = {
             text: "We confirm orders, goals, timeline, and financial position.",
           },
           {
-            icon: "search",
-            title: "2. Plan",
-            text: "We build the buy, sell, or management plan around your mission.",
-          },
-          {
             icon: "hand",
-            title: "3. Execute",
-            text: "Showings, offers, inspections, tenants, and documents stay on track.",
+            title: "2. Execute",
+            text: "We build the plan around your mission, then keep showings, offers, inspections, tenants, and documents on track.",
           },
           {
             icon: "key",
-            title: "4. Secure",
+            title: "3. Secure",
             text: "We guide escrow, keys, property handoff, or management setup.",
           },
         ],
