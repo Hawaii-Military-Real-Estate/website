@@ -873,7 +873,7 @@ const CONTENT = {
     },
     {
       slug: "cameron-kucic",
-      sort: 2,
+      sort: 3,
       featured: false,
       name: "Cameron Kucic",
       shortName: "Cameron",
@@ -1175,6 +1175,7 @@ const CONTENT = {
     {
       slug: "tonya-kucic",
       name: "Tonya Kucic",
+      sort: 2,
       shortName: "Tonya",
       image: "Tonya Kucic.jpg",
       phone: "",
