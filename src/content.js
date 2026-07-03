@@ -8,11 +8,14 @@ const CONTENT = {
       tagline: "Native Hawaiian Owned | Veteran Owned & Managed",
     },
     contact: {
-      phoneDisplay: "(808) 123-4567",
-      phoneHref: "tel:8081234567",
-      smsHref: "sms:8081234567",
-      email: "info@yourcompany.com",
-      address: "98-123 Oahu St, Aiea, HI 96701",
+      phoneDisplay: "(808) 218-9338",
+      phoneHref: "tel:8082189338",
+      smsHref: "sms:8082189338",
+      email: "david@davidkucic.com",
+      address: "91-1282 Kaiokia St, Ewa Beach, HI 96706",
+    },
+    settings: {
+      showAgentCardContactButtons: false,
     },
     nav: [
       {
@@ -66,8 +69,8 @@ const CONTENT = {
       subtitle:
         "PCS orders, VA-financed purchases, remote showings, renters, property management, and sale timelines handled with direct veteran-first communication.",
       note: "Clear answers within 2 hours during business hours.",
-      primaryLabel: "Call (808) 123-4567",
-      secondaryLabel: "info@yourcompany.com",
+      primaryLabel: "Call (808) 218-9338",
+      secondaryLabel: "david@davidkucic.com",
     },
   },
   shared: {
@@ -127,7 +130,7 @@ const CONTENT = {
         title: "Hawaii's #1 Military",
         titleAccent: "Real Estate Specialists Since 2011.",
         lead: "A retired First Sergeant's approach to Oahu real estate: direct guidance, disciplined execution, and clear answers for active duty, veterans, reservists, government civilians, government contractors, military families, and anyone seeking excellent service, communication, and honesty.",
-        primaryLabel: "Call (808) 123-4567",
+        primaryLabel: "Call (808) 218-9338",
         secondaryLabel: "Review Services",
         secondaryHref: "services.html",
         avatarCount: "+500",
@@ -363,7 +366,7 @@ const CONTENT = {
       cta: {
         title: "Ready for Veteran-First Guidance?",
         subtitle: "Let's review your mission, timeline, and next move.",
-        note: "Call (808) 123-4567 today.",
+        note: "Call (808) 218-9338 today.",
       },
       longForm: {
         eyebrow: "Detailed Reports",
@@ -535,7 +538,7 @@ const CONTENT = {
       path: "contact.html",
       title: "Contact Us | Hawaii Military Realty",
       description:
-        "Call (808) 123-4567, email info@yourcompany.com, or text us anytime.",
+        "Call (808) 218-9338, email david@davidkucic.com, or text us anytime.",
       hero: {
         image: "hero-pcs-planning.jpg",
         eyebrow: "Direct Contact",
@@ -554,7 +557,7 @@ const CONTENT = {
           icon: "phone",
           tone: "pri",
           label: "Call / Text",
-          value: "(808) 123-4567",
+          value: "(808) 218-9338",
           note: "The fastest way to get a direct answer.",
           hrefKey: "phoneHref",
         },
@@ -562,7 +565,7 @@ const CONTENT = {
           icon: "mail",
           tone: "acc",
           label: "Email",
-          value: "info@yourcompany.com",
+          value: "david@davidkucic.com",
           note: "Useful for orders, timelines, and property details.",
           hrefKey: "email",
         },
@@ -602,7 +605,7 @@ const CONTENT = {
         title: "Start With a Clear Brief",
         subtitle:
           "Buying, selling, relocating, or managing property from afar? Call or text anytime.",
-        note: "(808) 123-4567 | 7 days a week.",
+        note: "(808) 218-9338 | 7 days a week.",
       },
     },
     featuredListing: {
@@ -695,7 +698,7 @@ const CONTENT = {
             icon: "phone",
             tone: "primary",
             label: "Call now",
-            value: "(808) 123-4567",
+            value: "(808) 218-9338",
             hrefKey: "phoneHref",
           },
           {
@@ -799,6 +802,8 @@ const CONTENT = {
       name: "David J. Kucic",
       shortName: "David",
       image: "david kucic.jpg",
+      phone: "(808) 218-9338",
+      email: "david@davidkucic.com",
       title: "David J. Kucic - Founder / Principal Broker",
       description:
         "Meet David J. Kucic, founder and president of Hawaii Military Realty, Army veteran, principal broker, and trusted military relocation advisor.",
@@ -876,6 +881,8 @@ const CONTENT = {
       name: "Cameron Kucic",
       shortName: "Cameron",
       image: "cameron.jpg",
+      phone: "",
+      email: "",
       title: "Cameron Kucic - Broker in Charge / Oahu Real Estate Expert",
       description:
         "With over a decade of Oahu real estate experience, Cameron Kucic serves buyers, sellers, property investors, and military families with broker-level precision.",
@@ -960,6 +967,8 @@ const CONTENT = {
       name: "Ashley Payne",
       shortName: "Ashley",
       image: "ashley.jpg",
+      phone: "",
+      email: "",
       title: "Ashley Payne - Realtor / Property Management Advisor",
       description:
         "Meet Ashley Payne, a Realtor and Property Management Advisor helping families, military families, buyers, sellers, renters, and property owners across Oahu.",
@@ -1029,6 +1038,8 @@ const CONTENT = {
       name: "Brandie Martin",
       shortName: "Brandie",
       image: "brandie.jpg",
+      phone: "",
+      email: "",
       title:
         "Brandie Martin - Military Relocation Professional / Hawaii REALTOR",
       description:
@@ -1099,6 +1110,8 @@ const CONTENT = {
       name: "Jim Pickens",
       shortName: "Jim",
       image: "Jim Pickens.jpg",
+      phone: "",
+      email: "",
       title: "Jim Pickens - Realtor / Military Relocation Professional",
       description:
         "Meet Jim Pickens, a Hawaii Military Realty Realtor, retired Marine Master Sergeant, Military Relocation Professional, and property management advisor.",
@@ -1167,6 +1180,8 @@ const CONTENT = {
       name: "Tonya Kucic",
       shortName: "Tonya",
       image: "Tonya Kucic.jpg",
+      phone: "",
+      email: "",
       title: "Tonya Kucic - Co-Owner / Realtor",
       description:
         "Meet Tonya Kucic, co-owner and full-time agent with Hawaii Military Realty, serving military and civilian clients across Oahu.",
@@ -1252,6 +1267,8 @@ const CONTENT = {
       name: "Jeff R. Loyd",
       shortName: "Jeff",
       image: "agent-silhouette.svg",
+      phone: "",
+      email: "",
       title: "Jeff R. Loyd - Broker-in-Charge / Property Management Advisor",
       description:
         "Meet Sergeant First Class (Retired) Jeff R. Loyd, Broker-in-Charge and Property Management Advisor for Hawaii Military Realty.",
@@ -1344,6 +1361,8 @@ const CONTENT = {
       name: "Tami Sego",
       shortName: "Tami",
       image: "Tami Sego.png",
+      phone: "",
+      email: "",
       title: "Tami Sego - Realtor",
       description:
         "Meet Tami Sego, a Hawaii Realtor, military spouse, mom, and former educator serving Oahu buyers, sellers, local residents, and military families.",

@@ -1835,7 +1835,6 @@ ul {
 }
 
 .agent-hero .cta {
-  margin-top: 1.75rem;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -1850,6 +1849,13 @@ ul {
 
 .agent-hero .cta:hover {
   background: var(--primary-2);
+}
+
+.agent-contact-actions:not(:empty) {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .about-split {

@@ -57,6 +57,45 @@ function resolveHref(hrefKey) {
   return hrefKey || "#";
 }
 
+function phoneHref(phone) {
+  const digits = String(phone || "").replace(/\D/g, "");
+
+  return digits ? "tel:" + digits : "#";
+}
+
+function renderAgentContactActions(agent, variant) {
+  const actions = [];
+  const linkClass = variant === "hero" ? ' class="cta"' : "";
+
+  if (agent.phone) {
+    actions.push(
+      '<a' +
+        linkClass +
+        ' href="' +
+        escapeHtml(phoneHref(agent.phone)) +
+        '">' +
+        icon("phone") +
+        " " +
+        escapeHtml(agent.phone) +
+        "</a>",
+    );
+  }
+
+  if (agent.email) {
+    actions.push(
+      '<a' +
+        linkClass +
+        ' href="mailto:' +
+        escapeHtml(agent.email) +
+        '">' +
+        icon("mail") +
+        " Email</a>",
+    );
+  }
+
+  return actions.join("\n");
+}
+
 // Application use cases
 function getRootPageModels() {
   return [
@@ -571,15 +610,17 @@ function renderTeamPage(model) {
 }
 
 function renderTeamCard(agent) {
+  const showContactButtons =
+    content.site.settings &&
+    content.site.settings.showAgentCardContactButtons === true;
+
   return renderTemplate("partials/team-card.html", {
     ...agent,
     prefix: "",
     profileHref: "agents/" + agent.slug + ".html",
-    phoneHref: content.site.contact.phoneHref,
-    phoneDisplay: content.site.contact.phoneDisplay,
-    email: content.site.contact.email,
-    phoneIcon: icon("phone"),
-    mailIcon: icon("mail"),
+    contactActionsHtml: showContactButtons
+      ? renderAgentContactActions(agent, "card")
+      : "",
     sortAttribute:
       typeof agent.sort === "number"
         ? ' data-sort="' + escapeHtml(agent.sort) + '"'
@@ -627,9 +668,7 @@ function renderAgentPage(model) {
   };
   const mainHtml = renderTemplate("pages/agent.html", {
     agent: agent,
-    phoneHref: content.site.contact.phoneHref,
-    phoneDisplay: content.site.contact.phoneDisplay,
-    phoneIcon: icon("phone"),
+    contactActionsHtml: renderAgentContactActions(agent, "hero"),
     arrowLeftIcon: icon("arrowLeft"),
     aboutHtml: paragraphs(agent.about),
     badgesHtml: agent.badges.map(renderBadge).join("\n"),
