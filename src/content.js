@@ -5,7 +5,7 @@ const CONTENT = {
       shortName: "Hawaii Military",
       subName: "Realty",
       mark: "HMR",
-      tagline: "Native Hawaiian Owned | Veteran Owned & Managed",
+      tagline: "Native Hawaiian & Veteran Owned/Managed",
     },
     contact: {
       phoneDisplay: "(808) 218-9338",
@@ -126,7 +126,7 @@ const CONTENT = {
       description:
         "Native Hawaiian veteran owned and managed Oahu real estate guidance for active duty, veterans, reservists, government civilians, government contractors, and service-minded clients.",
       hero: {
-        eyebrow: "Native Veteran Hawaiian Owned & Managed",
+        eyebrow: "Native Hawaiian & Veteran Owned/Managed",
         title: "Hawaii's #1 Military",
         titleAccent: "Real Estate Specialists Since 2011.",
         lead: "A retired First Sergeant's approach to Oahu real estate: direct guidance, disciplined execution, and clear answers for active duty, veterans, reservists, government civilians, government contractors, military families, and anyone seeking excellent service, communication, and honesty.",
