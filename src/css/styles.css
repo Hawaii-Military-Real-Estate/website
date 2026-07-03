@@ -1620,6 +1620,9 @@ ul {
   box-shadow: var(--shadow-soft);
   transition: 0.5s;
   border-top: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .agent-card:hover {
@@ -1651,6 +1654,9 @@ ul {
 
 .agent-card .body {
   padding: 1.4rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .agent-card .body h3 {
@@ -1672,7 +1678,8 @@ ul {
 }
 
 .agent-actions {
-  margin-top: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
   display: grid;
   gap: 0.5rem;
 }
