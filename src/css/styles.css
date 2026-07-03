@@ -967,6 +967,18 @@ ul {
   place-items: center;
 }
 
+.floating-card-title {
+  color: var(--tactical-black);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.floating-card-subtitle {
+  color: var(--camo-olive);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
 /* ============ Trust bar ============ */
 .trust-bar {
   border-top: 1px solid var(--border);

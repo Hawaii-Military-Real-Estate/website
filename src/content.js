@@ -1266,7 +1266,7 @@ const CONTENT = {
       slug: "jeff-loyd",
       name: "Jeff R. Loyd",
       shortName: "Jeff",
-      image: "agent-silhouette.svg",
+      image: "Jeff Loyd.JPG",
       phone: "",
       email: "",
       title: "Jeff R. Loyd - Broker-in-Charge / Property Management Advisor",
@@ -1309,15 +1309,15 @@ const CONTENT = {
             "Senior Enlisted Trainer",
           ],
           paragraphs: [
-            "Jeff grew up in the border town of El Paso, Texas. Soon after graduating from high school, he enlisted in the U.S. Army as a helicopter avionics technician.",
-            "Jeff's Army service spanned the globe, with assignments in Korea, Japan, Kuwait, Bosnia, Iraq, and Afghanistan. Across those assignments, he sharpened the managerial skills that now inform his real estate and property management work.",
-            "Throughout his 23-year career, Jeff served in a wide range of positions, including avionics technician, helicopter electrician, squad leader, platoon sergeant, instructor, Division Liaison Officer, and Operations Noncommissioned Officer in Charge (NCOIC) of a forward-deployed brigade in Iraq and Afghanistan. He also served as the Senior Enlisted Trainer to the Afghan Air Force.",
+            "Jeff grew up in the border town of El Paso, Texas. Soon after he graduated from high school, he enlisted in the U.S. Army as a helicopter avionics technician.",
+            "While in the Army, Jeff's service spanned the globe. He served the military in far away assignments such as Korea, Japan, Kuwait, Bosnia, Iraq, and Afghanistan, all while honing his managerial skills.",
+            "Throughout his 23-year career, Jeff excelled in a wide assortment of positions, including avionics technician, helicopter electrician, squad leader, platoon sergeant, instructor, Division Liaison Officer, and Operations Non-Commissioned Officer in Charge (NCOIC) of a forward-deployed brigade in hostile countries including Iraq and Afghanistan. Jeff also served as the Senior Enlisted Trainer to the Afghan Air Force.",
           ],
         },
         {
           title: "Awards and Education",
           paragraphs: [
-            "Jeff's military awards and decorations include the Bronze Star Medal, Meritorious Service Medal (2), Army Commendation Medal (2), Army Achievement Medal (13), Air Force Achievement Medal, Good Conduct Medal (7th Knot), National Defense Service Medal with campaign star, Korean Defense Service Medal, Armed Forces Expeditionary Medal with campaign star, Afghanistan Campaign Medal with campaign star, Iraq Campaign Medal with two campaign stars, Global War on Terrorism Service Medal, Armed Forces Service Medal, NATO Medal with campaign star, NCO Professional Development Ribbon (3), Army Service Ribbon, Overseas Service Ribbon (6), Meritorious Unit Citation, Master Air Crewmember Badge, Driver's Badge, and Sharpshooter Marksmanship Badge for M4 and M9.",
+            "Jeff's military awards and decorations include the Bronze Star Medal, Meritorious Service Medal (2), Army Commendation Medal (2), Army Achievement Medal (13), Air Force Achievement Medal, Good Conduct Medal (7th Knot), National Defense Service Medal with campaign star, Korean Defense Service Medal, Armed Forces Service Expeditionary Medal with campaign star, Afghanistan Campaign Medal with campaign star, Iraq Campaign Medal with two campaign stars, Global War on Terrorism Service Medal, Armed Forces Service Medal, NATO Medal with campaign star, NCO Professional Development Ribbon (3), Army Service Ribbon, Overseas Service Ribbon (6), Meritorious Unit Citation, Master Air Crewmember Badge, Driver's Badge, and Sharpshooter Marksmanship Badge for M4 and M9.",
             "His education includes a Bachelor of Science in Occupational Education in Business Management with a minor in Marketing from Wayland Baptist University.",
           ],
         },
@@ -1330,9 +1330,9 @@ const CONTENT = {
             "CRS",
           ],
           paragraphs: [
-            "After retirement, Jeff pursued his real estate salesperson license and completed all requirements on April 1, 2013.",
+            "After retirement, Jeff pursued a license as a Real Estate Salesperson and completed all requirements on April 1, 2013.",
             "In his 12-year career as a Realtor, Jeff has earned the Accredited Buyer's Representative (ABR) designation and Certified Residential Specialist (CRS) designation. He is currently a Broker-in-Charge for Hawaii Military Realty, Inc.",
-            "Jeff has served as a Buyer's Agent, Seller's Agent, and Property Manager, bringing the same operational discipline and direct communication from his military career into each client relationship.",
+            "Jeff has served as a Buyer's Agent, Seller's Agent, and Property Manager.",
           ],
         },
         {
@@ -1351,8 +1351,9 @@ const CONTENT = {
       },
       about: [
         "Sergeant First Class (Retired) Jeff R. Loyd is a Broker-in-Charge and Property Management Advisor for Hawaii Military Realty, Inc.",
-        "After 23 years of U.S. Army service across aviation maintenance, leadership, instruction, and forward-deployed operations, Jeff brings disciplined communication, operational judgment, and client-first execution to Oahu real estate.",
-        "Since completing his real estate salesperson requirements on April 1, 2013, Jeff has built a 12-year real estate career serving as a Buyer's Agent, Seller's Agent, Property Manager, and Broker-in-Charge.",
+        "Jeff grew up in El Paso, Texas, and enlisted in the U.S. Army as a helicopter avionics technician soon after graduating from high school. His 23-year Army career spanned Korea, Japan, Kuwait, Bosnia, Iraq, and Afghanistan, where he served in roles ranging from avionics technician and helicopter electrician to platoon sergeant, instructor, Division Liaison Officer, Operations NCOIC, and Senior Enlisted Trainer to the Afghan Air Force.",
+        "After retirement, Jeff pursued a license as a Real Estate Salesperson and completed all requirements on April 1, 2013. In his 12-year career as a Realtor, he has earned the Accredited Buyer's Representative (ABR) designation and Certified Residential Specialist (CRS) designation and is currently a Broker-in-Charge for Hawaii Military Realty, Inc.",
+        "Jeff has served as a Buyer's Agent, Seller's Agent, and Property Manager. He is married to his wife, Aiko, and has two children. His hobbies include golf, photography, and spending time with his family.",
       ],
       featuredAbout: [],
     },
