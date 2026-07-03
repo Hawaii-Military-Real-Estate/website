@@ -6,6 +6,8 @@ const CONTENT = {
       subName: "Realty",
       mark: "HMR",
       tagline: "Native Hawaiian & Veteran Owned/Managed",
+      useSimulatedLogo: false,
+      logoPath: "logo.jpg",
     },
     contact: {
       phoneDisplay: "(808) 218-9338",

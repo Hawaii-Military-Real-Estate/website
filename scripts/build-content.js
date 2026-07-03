@@ -287,15 +287,55 @@ function renderExtraHead(page) {
 }
 
 function brandParts() {
+  const brand = content.site.brand;
+
   return {
-    brandName: content.site.brand.name,
-    brandShortName: content.site.brand.shortName,
-    brandSubName: content.site.brand.subName,
-    brandMark: content.site.brand.mark,
+    brandName: brand.name,
+    brandShortName: brand.shortName,
+    brandSubName: brand.subName,
+    brandMark: brand.mark,
     brandFirst: "Hawaii",
     brandAccent: "Military",
-    brandTagline: content.site.brand.tagline,
+    brandTagline: brand.tagline,
   };
+}
+
+function renderBrandLogo(style, prefix, light) {
+  const brand = content.site.brand;
+  const markHtml =
+    brand.useSimulatedLogo !== false
+      ? renderBrandMark(style, brand)
+      : '<span class="brand-image-mark"><img src="' +
+        escapeHtml(prefix + "assets/" + brand.logoPath) +
+        '" alt="" /></span>';
+
+  if (style === "asset") {
+    return (
+      markHtml +
+      '<span class="brand-text"><span class="brand-name">' +
+      escapeHtml(brand.shortName) +
+      '</span><span class="brand-sub">' +
+      escapeHtml(brand.subName) +
+      "</span></span>"
+    );
+  }
+
+  return (
+    markHtml +
+    '<span>Hawaii <span style="color:' +
+    (light ? "var(--accent)" : "var(--primary)") +
+    '">Military</span><small>' +
+    escapeHtml(brand.tagline) +
+    "</small></span>"
+  );
+}
+
+function renderBrandMark(style, brand) {
+  if (style === "asset") {
+    return '<span class="brand-mark">' + icon("home-mark") + "</span>";
+  }
+
+  return '<span class="logo-mark">' + escapeHtml(brand.mark) + "</span>";
 }
 
 function renderNav(style, activePath, prefix, asFooter) {
@@ -339,6 +379,7 @@ function chromeData(style, activePath, prefix) {
   return {
     ...brandParts(),
     prefix: prefix,
+    brandLogoHtml: renderBrandLogo(style, prefix, style === "asset"),
     phoneHref: contact.phoneHref,
     phoneDisplay: contact.phoneDisplay,
     email: contact.email,
