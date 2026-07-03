@@ -1307,48 +1307,70 @@ const CONTENT = {
       slug: "tami-sego",
       name: "Tami Sego",
       shortName: "Tami",
-      image: "agent-silhouette.svg",
+      image: "Tami Sego.png",
       title: "Tami Sego - Realtor",
       description:
-        "Placeholder profile for Tami Sego of Hawaii Military Realty.",
+        "Meet Tami Sego, a Hawaii Realtor, military spouse, mom, and former educator serving Oahu buyers, sellers, local residents, and military families.",
       roleTag: "Realtor",
       cardRole: "Realtor",
-      cardMeta: "Photo and bio placeholder",
+      cardMeta: "Military spouse | Former educator",
       tagline:
-        "Placeholder profile reserved for Tami Sego's Hawaii Military Realty bio.",
+        "Hawaii Realtor, military spouse, mom, and former educator helping Oahu clients buy and sell with confidence.",
       aboutTitle: "About Tami",
       badges: [
         {
+          icon: "star",
+          title: "Former Educator",
+          text: "20 years teaching in Hawaii public schools",
+        },
+        {
+          icon: "shieldCheck",
+          title: "Military Spouse",
+          text: "Firsthand understanding of PCS moves and military family transitions",
+        },
+        {
           icon: "home",
-          title: "Oahu Real Estate",
-          text: "Full profile details pending",
+          title: "Oahu Guidance",
+          text: "Serving buyers and sellers across Oahu's unique real estate market",
         },
         {
           icon: "hand",
-          title: "Client Service",
-          text: "Bio placeholder ready for final copy",
+          title: "Client First",
+          text: "Calm communication, careful listening, and personalized guidance",
         },
       ],
       sections: [
         {
-          title: "Profile Placeholder",
+          title: "Client-First Guidance",
           pills: [
-            "Oahu Real Estate",
-            "Client Service",
-            "Hawaii Military Realty",
+            "Buyers",
+            "Sellers",
+            "PCS Moves",
+            "Local Residents",
           ],
           paragraphs: [
-            "Tami Sego's detailed bio and headshot are being prepared. This page is reserved for her full Hawaii Military Realty profile, including client focus, local experience, and contact details.",
+            "Tami believes informed clients make the best decisions. She takes the time to listen, understand each client's unique goals, and provide personalized guidance every step of the way.",
+            "As a military spouse, she understands firsthand that moving is about more than finding a house - it's about finding a place to truly call home. Whether assisting military families with PCS moves to or from Oahu or helping local residents navigate the unique Hawaii real estate market, she is committed to creating a seamless and rewarding experience for her clients.",
+          ],
+        },
+        {
+          title: "Relationships Beyond Closing",
+          paragraphs: [
+            "Known for her genuine care and dedication to lasting relationships, Tami strives to be a trusted resource long after closing day.",
+            "When she's not helping clients, you can find her outrigger canoe paddling, discovering local coffee shops, or spending time with her family.",
           ],
         },
       ],
       cta: {
-        title: "Contact the Team",
-        subtitle: "Call or text Hawaii Military Realty for Oahu guidance.",
-        note: "Full Tami Sego profile content pending.",
+        title: "Let's Talk About Your Oahu Move",
+        subtitle:
+          "Call or text Tami for calm, informed buying and selling guidance.",
+        note: "Support for military families, local residents, buyers, and sellers.",
       },
       about: [
-        "Tami Sego's detailed bio and photo are pending. This placeholder keeps her profile page, team card, and contact path ready for final content.",
+        "Proudly serving Oahu, Tami Sego is a Hawaii Realtor, military spouse, mom, and former educator who is passionate about helping clients buy and sell real estate with confidence. After 20 years teaching in Hawaii public schools, she brings exceptional communication and a calm, client-first approach to the home buying and selling process.",
+        "Tami believes informed clients make the best decisions. She takes the time to listen, understand each client's unique goals, and provide personalized guidance every step of the way. As a military spouse, she understands firsthand that moving is about more than finding a house - it's about finding a place to truly call home.",
+        "Whether assisting military families with PCS moves to or from Oahu or helping local residents navigate the unique Hawaii real estate market, she is committed to creating a seamless and rewarding experience for her clients.",
       ],
       featuredAbout: [],
     },
