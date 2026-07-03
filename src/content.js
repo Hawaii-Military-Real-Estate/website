@@ -1166,48 +1166,84 @@ const CONTENT = {
       slug: "tonya-kucic",
       name: "Tonya Kucic",
       shortName: "Tonya",
-      image: "agent-silhouette.svg",
-      title: "Tonya Kucic - Realtor",
+      image: "Tonya Kucic.jpg",
+      title: "Tonya Kucic - Co-Owner / Realtor",
       description:
-        "Placeholder profile for Tonya Kucic of Hawaii Military Realty.",
-      roleTag: "Realtor",
-      cardRole: "Realtor",
-      cardMeta: "Photo and bio placeholder",
+        "Meet Tonya Kucic, co-owner and full-time agent with Hawaii Military Realty, serving military and civilian clients across Oahu.",
+      roleTag: "Co-Owner / Realtor",
+      cardRole: "Co-Owner / Realtor",
+      cardMeta: "20 yrs real estate | Native Hawaiian",
       tagline:
-        "Placeholder profile reserved for Tonya Kucic's Hawaii Military Realty bio.",
+        "Dedicated Hawaii real estate professional serving military and civilian clients across Oahu with local insight and reliable guidance.",
       aboutTitle: "About Tonya",
       badges: [
         {
+          icon: "star",
+          title: "Two Decades in Real Estate",
+          text: "Helping Oahu buyers and sellers since entering real estate in 2005",
+        },
+        {
+          icon: "shieldCheck",
+          title: "Military Family Insight",
+          text: "Army dependent and Army spouse with firsthand relocation experience",
+        },
+        {
           icon: "home",
-          title: "Oahu Real Estate",
-          text: "Full profile details pending",
+          title: "Oahu Communities",
+          text: "Experience across Ewa Beach, Kapolei, Mililani, and surrounding markets",
         },
         {
           icon: "hand",
-          title: "Client Service",
-          text: "Bio placeholder ready for final copy",
+          title: "Financial Background",
+          text: "Banking experience with Bank of Hawaii and American Express Bank",
         },
       ],
       sections: [
         {
-          title: "Profile Placeholder",
+          title: "Oahu Real Estate Service",
           pills: [
-            "Oahu Real Estate",
-            "Client Service",
+            "Buyers",
+            "Sellers",
+            "Military Families",
+            "Civilian Clients",
+          ],
+          paragraphs: [
+            "As a co-owner and full-time agent with Hawaii Military Realty, Inc., Tonya has built a career centered on helping individuals and families navigate the complexities of buying and selling homes across Oahu.",
+            "With approximately two decades of experience in the real estate industry, she has developed a reputation for reliability, market knowledge, and personalized service, handling transactions across communities such as Ewa Beach, Kapolei, and Mililani.",
+          ],
+        },
+        {
+          title: "Military Family Perspective",
+          pills: [
+            "Military Dependent",
+            "Army Spouse",
+            "Relocation",
             "Hawaii Military Realty",
           ],
           paragraphs: [
-            "Tonya Kucic's detailed bio and headshot are being prepared. This page is reserved for her full Hawaii Military Realty profile, including client focus, local experience, and contact details.",
+            "Raised as the daughter of a career U.S. Army infantry soldier, Tonya grew up as a military dependent and experienced life in multiple locations, including the mainland United States, Panama, and Germany.",
+            "This upbringing shaped her deep understanding of military life and the unique challenges faced by service members and their families. Later in life, she continued that connection as an Army spouse, further strengthening her insight into relocation, deployment cycles, and the importance of stable housing for military families.",
+          ],
+        },
+        {
+          title: "Hawaii Roots and Financial Experience",
+          paragraphs: [
+            "Tonya is recognized for her strong ties to Hawaii and her identity as a Native Hawaiian, which influences her appreciation for local culture, community, and aina.",
+            "Before entering real estate in 2005, she built a background in banking, working with institutions such as Bank of Hawaii and American Express Bank, which helped develop her financial expertise.",
           ],
         },
       ],
       cta: {
-        title: "Contact the Team",
-        subtitle: "Call or text Hawaii Military Realty for Oahu guidance.",
-        note: "Full Tonya Kucic profile content pending.",
+        title: "Let's Talk About Your Oahu Goals",
+        subtitle:
+          "Call or text Tonya for experienced buying and selling guidance.",
+        note: "Support for military families, civilian clients, buyers, and sellers.",
       },
       about: [
-        "Tonya Kucic's detailed bio and photo are pending. This placeholder keeps her profile page, team card, and contact path ready for final content.",
+        "Tonya Kucic is a dedicated real estate professional based in Hawaii, known for her commitment to serving both military and civilian clients through her work with Hawaii Military Realty, Inc. As a co-owner and full-time agent, she has built a career centered on helping individuals and families navigate the complexities of buying and selling homes across Oahu.",
+        "With approximately two decades of experience in the real estate industry, she has developed a reputation for reliability, market knowledge, and personalized service, handling transactions across communities such as Ewa Beach, Kapolei, and Mililani.",
+        "Raised as the daughter of a career U.S. Army infantry soldier and later an Army spouse, Tonya brings a deep understanding of military life, relocation, deployment cycles, and the importance of stable housing for military families.",
+        "Before entering real estate in 2005, she built a background in banking with institutions such as Bank of Hawaii and American Express Bank, helping develop the financial expertise she brings to client guidance today.",
       ],
       featuredAbout: [],
     },
