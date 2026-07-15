@@ -40,6 +40,13 @@ function sortAgents(agents) {
   });
 }
 
+function formatList(items) {
+  if (items.length < 2) return items[0] || "";
+  if (items.length === 2) return items.join(" and ");
+
+  return items.slice(0, -1).join(", ") + ", and " + items[items.length - 1];
+}
+
 function getFeaturedAgent() {
   return (
     sortAgents(content.agents).find(function (agent) {
@@ -651,18 +658,31 @@ function renderContactPage(model) {
 
 function renderTeamPage(model) {
   const page = content.team;
+  const sortedAgents = sortAgents(content.agents);
+  const agentNames = formatList(
+    sortedAgents.map(function (agent) {
+      return agent.name;
+    }),
+  );
+  const teamPage = {
+    ...page,
+    description:
+      "Meet " +
+      agentNames +
+      ", real estate professionals serving clients across Oahu.",
+  };
   const heroHtml = renderPageHero({
     image: "hero-bg-team.jpg",
     eyebrow: page.eyebrow,
     heading: page.heading,
-    intro: page.intro[0],
+    intro: agentNames + " " + page.intro[0],
   });
   const mainHtml = renderTemplate(model.template, {
     heroHtml: heroHtml,
-    teamCardsHtml: sortAgents(content.agents).map(renderTeamCard).join("\n"),
+    teamCardsHtml: sortedAgents.map(renderTeamCard).join("\n"),
   });
 
-  return renderRootPage({ ...model, page: page, mainHtml: mainHtml });
+  return renderRootPage({ ...model, page: teamPage, mainHtml: mainHtml });
 }
 
 function renderTeamCard(agent) {

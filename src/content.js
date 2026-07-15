@@ -743,7 +743,7 @@ const CONTENT = {
       note: "Serving buyers, sellers, renters, military families, property owners, and property investors across Oahu.",
     },
     intro: [
-      "David J. Kucic, Cameron Kucic, Ashley Payne, Brandie Martin, Jim Pickens, Tonya Kucic, Jeff R. Loyd, and Tami Sego serve buyers, sellers, renters, military families, homeowners, government civilians, government contractors, and investors with steady communication, practical Oahu market guidance, and disciplined client advocacy.",
+      "serve buyers, sellers, renters, military families, homeowners, government civilians, government contractors, and investors with steady communication, practical Oahu market guidance, and disciplined client advocacy.",
     ],
   },
   about: {
