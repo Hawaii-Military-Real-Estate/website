@@ -63,6 +63,12 @@ function phoneHref(phone) {
   return digits ? "tel:" + digits : "#";
 }
 
+function smsHref(phone) {
+  const digits = String(phone || "").replace(/\D/g, "");
+
+  return digits ? "sms:" + digits : "#";
+}
+
 function renderAgentContactActions(agent, variant) {
   const actions = [];
   const linkClass = variant === "hero" ? ' class="cta"' : "";
@@ -78,6 +84,15 @@ function renderAgentContactActions(agent, variant) {
         " " +
         escapeHtml(agent.phone) +
         "</a>",
+    );
+    actions.push(
+      '<a' +
+        linkClass +
+        ' href="' +
+        escapeHtml(smsHref(agent.phone)) +
+        '">' +
+        icon("msg") +
+        " Text</a>",
     );
   }
 
