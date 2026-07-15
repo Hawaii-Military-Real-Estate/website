@@ -878,8 +878,8 @@ const CONTENT = {
       name: "Cameron Kucic",
       shortName: "Cameron",
       image: "cameron.jpg",
-      phone: "",
-      email: "",
+      phone: "(808) 225-5699",
+      email: "camkucic@gmail.com",
       title: "Cameron Kucic - Broker in Charge / Oahu Real Estate Expert",
       description:
         "With over a decade of Oahu real estate experience, Cameron Kucic serves buyers, sellers, property investors, and military families with broker-level precision.",
@@ -964,8 +964,8 @@ const CONTENT = {
       name: "Ashley Payne",
       shortName: "Ashley",
       image: "ashley.jpg",
-      phone: "",
-      email: "",
+      phone: "(808) 282-3270",
+      email: "ashleykpayne.himre@gmail.com",
       title: "Ashley Payne - Realtor / Property Management Advisor",
       description:
         "Meet Ashley Payne, a Realtor and Property Management Advisor helping families, military families, buyers, sellers, renters, and property owners across Oahu.",
@@ -1035,8 +1035,8 @@ const CONTENT = {
       name: "Brandie Martin",
       shortName: "Brandie",
       image: "brandie.jpg",
-      phone: "",
-      email: "",
+      phone: "(808) 388-9921",
+      email: "brandie.martin.himre@gmail.com",
       title:
         "Brandie Martin - Military Relocation Professional / Hawaii REALTOR",
       description:
@@ -1107,8 +1107,8 @@ const CONTENT = {
       name: "Jim Pickens",
       shortName: "Jim",
       image: "Jim Pickens.jpg",
-      phone: "",
-      email: "",
+      phone: "(808) 861-2136",
+      email: "jim.pickens.himre@gmail.com",
       title: "Jim Pickens - Realtor / Military Relocation Professional",
       description:
         "Meet Jim Pickens, a Hawaii Military Realty Realtor, retired Marine Master Sergeant, Military Relocation Professional, and property management advisor.",
@@ -1178,8 +1178,8 @@ const CONTENT = {
       sort: 2,
       shortName: "Tonya",
       image: "Tonya Kucic.jpg",
-      phone: "",
-      email: "",
+      phone: "(808) 221-3638",
+      email: "tonyakucic@yahoo.com",
       title: "Tonya Kucic - Co-Owner / Realtor",
       description:
         "Meet Tonya Kucic, co-owner and full-time agent with Hawaii Military Realty, serving military and civilian clients across Oahu.",
@@ -1265,8 +1265,8 @@ const CONTENT = {
       name: "Jeff R. Loyd",
       shortName: "Jeff",
       image: "Jeff Loyd.JPG",
-      phone: "",
-      email: "",
+      phone: "(808) 542-6095",
+      email: "jeff.loyd.himre@gmail.com",
       title: "Jeff R. Loyd - Broker-in-Charge / Property Management Advisor",
       description:
         "Meet Sergeant First Class (Retired) Jeff R. Loyd, Broker-in-Charge and Property Management Advisor for Hawaii Military Realty.",
@@ -1360,8 +1360,8 @@ const CONTENT = {
       name: "Tami Sego",
       shortName: "Tami",
       image: "Tami Sego.png",
-      phone: "",
-      email: "",
+      phone: "(808) 226-2126",
+      email: "tami.sego.himre@gmail.com",
       title: "Tami Sego - Realtor",
       description:
         "Meet Tami Sego, a Hawaii Realtor, military spouse, mom, and former educator serving Oahu buyers, sellers, local residents, and military families.",
