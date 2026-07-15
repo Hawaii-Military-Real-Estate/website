@@ -1983,14 +1983,31 @@ ul {
 
 .badges-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .badges-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .badge-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 1rem) / 2);
+  }
 }
 
 @media (min-width: 1024px) {
   .badges-grid {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
     gap: 0;
+  }
+
+  .badge-item:last-child:nth-child(odd) {
+    width: auto;
   }
 }
 
@@ -2001,6 +2018,8 @@ ul {
 
 @media (min-width: 1024px) {
   .badge-item {
+    flex: 1 1 0;
+    min-width: 0;
     padding: 0 1.5rem;
     border-left: 1px solid var(--border);
   }
