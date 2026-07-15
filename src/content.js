@@ -51,11 +51,11 @@ const CONTENT = {
         href: "https://www.linkedin.com/in/david-kucic-7948236/",
         icon: "linkedin",
       },
-      {
-        label: "Facebook",
-        href: "https://www.facebook.com/HawaiiMilitaryRealty/",
-        icon: "facebook",
-      },
+      // {
+      //   label: "Facebook",
+      //   href: "https://www.facebook.com/HawaiiMilitaryRealty/",
+      //   icon: "facebook",
+      // },
     ],
     footer: {
       blurb:
